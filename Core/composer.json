@@ -1,0 +1,8 @@
+{
+    "require": {
+        "symfony/yaml": "^4.1",
+        "symfony/var-dumper": "^4.1",
+        "twig/twig": "2.0",
+        "symfony/routing": "^4.1"
+    }
+}

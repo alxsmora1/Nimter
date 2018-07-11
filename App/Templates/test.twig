@@ -1,0 +1,32 @@
+{% include 'overall/head.twig' %}
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="text-center text-uppercase">{{ Title }}</h1>
+				<h2>{{ param }}</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="/TMF/home" class="btn btn-info form-control"><i class="fas fa-home"></i> Home</a>
+			</div>
+		</div>
+		<br><br>
+		<form action="/TMF/test/case/1" method="post" accept-charset="utf-8">
+			<div class="row">
+				<div class="col-md-4">
+					<input type="text" name="name" class="form-control" placeholder="Nombre">
+				</div>
+				<div class="col-md-4">
+					<input type="text" name="email" class="form-control" placeholder="Email">
+				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-success form-control">Enviar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+{% include 'overall/footer.twig' %}
+</body>
+</html>
