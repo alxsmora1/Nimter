@@ -5,8 +5,12 @@ Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intu
 
 ![Home del Framework](https://firebasestorage.googleapis.com/v0/b/horizon-81484.appspot.com/o/Horizon.png?alt=media&token=37c67d3a-0761-423b-b1d4-9a9d5d2532cb "Home del Framework")
 
+##Versión
+* 1.1.0
+
 ## Requerimientos
 * PHP 7.0 o superior
+* APACHE 2
 * MariaDB 10.1 o superior
 
 ## Hecho con

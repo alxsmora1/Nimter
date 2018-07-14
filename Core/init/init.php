@@ -23,7 +23,7 @@ ExceptionHandler::register();
 Debug::enable();
 
 #Obtiene la configuaración del framework
-$config = (new Config)->readConfig();
+$config = (new Config)->general_config();
 global $config;
 
 #Configuración para el motor de platillas Twig

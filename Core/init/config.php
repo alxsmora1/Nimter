@@ -16,7 +16,8 @@ use Symfony\Component\Yaml\Yaml;
 
 final class config
 {	
-	final public function readConfig() : array {
+	final public function general_config() : array 
+	{
 		return Yaml::parse(file_get_contents('Core/init/config.yml'));
 	}
 }

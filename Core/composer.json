@@ -4,5 +4,7 @@
         "symfony/var-dumper": "^4.1",
         "twig/twig": "2.0",
         "symfony/debug": "^4.1"
+    },
+    "require-dev": {
     }
 }
