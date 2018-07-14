@@ -19,11 +19,11 @@ class __TwigTemplate_b90a1c4d3f37a1c68c1804b47fb7c007f35a0cd9180a8f5dadabca91014
         echo "<!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src=\"/Styles/vendor/jquery/jquery-3.2.1.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-<script src=\"/Styles/vendor/js/popper.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-<script src=\"/Styles/vendor/js/holder.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-<script src=\"/Styles/vendor/bootstrap/bootstrap.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-<script src=\"/Styles/vendor/js/bootstrap-datepicker-custom.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+<script src=\"/../Styles/vendor/jquery/jquery-3.2.1.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+<script src=\"/../Styles/vendor/js/popper.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+<script src=\"/../Styles/vendor/js/holder.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+<script src=\"/../Styles/vendor/bootstrap/bootstrap.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+<script src=\"/../Styles/vendor/js/bootstrap-datepicker-custom.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
 ";
     }
 
@@ -39,6 +39,6 @@ class __TwigTemplate_b90a1c4d3f37a1c68c1804b47fb7c007f35a0cd9180a8f5dadabca91014
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "overall/footer.twig", "C:\\xampp\\htdocs\\TMF\\App\\Templates\\overall\\footer.twig");
+        return new Twig_Source("", "overall/footer.twig", "C:\\xampp\\htdocs\\Horizon\\App\\Templates\\overall\\footer.twig");
     }
 }

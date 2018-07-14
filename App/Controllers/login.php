@@ -16,5 +16,4 @@ echo $twig->render('login.twig', array(
 	'controller' => $controller,
 	));
 
-$conn->close();
 ?>

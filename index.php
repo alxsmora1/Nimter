@@ -13,6 +13,6 @@ require_once ('Core/autoload.php');
 require_once ('Core/vendor/autoload.php');
 require_once ('Core/init/init.php');
 
-require $config['path']['controllers'] . "{$controller}.php";
-
+//require $config['path']['controllers'] . "{$controller}.php";
+require $ctl->routeController($controller);
 ?>

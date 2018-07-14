@@ -28,7 +28,7 @@ class login
 		{
 			if ( !empty($_POST['username']) and !empty($_POST['pwd']) ) 
 			{
-				$conn = new conn2db();
+				$conn = new conn2dbmysqli();
 				$hash = new hashpwd();
 				$this->user = $conn->real_escape_string($_POST['username']);
 				$this->hashpwd = $hash->encrypt($_POST['pwd']);

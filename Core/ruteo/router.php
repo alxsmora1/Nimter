@@ -33,7 +33,7 @@ class router
 
     public function setController()
     {
-        $this->controller = $this->uri[2] === '' ? 'home' : $this->uri[2]; 
+        $this->controller = $this->uri[2] === '' ? 'home' : $this->uri[2];
     }
 
     public function setMethod()

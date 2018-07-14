@@ -21,7 +21,11 @@ class ComposerStaticInit5c53b142e2d2f5ae786a66ddc7787215
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarDumper\\' => 28,
-            'Symfony\\Component\\Routing\\' => 26,
+            'Symfony\\Component\\Debug\\' => 24,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
     );
 
@@ -46,9 +50,13 @@ class ComposerStaticInit5c53b142e2d2f5ae786a66ddc7787215
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
-        'Symfony\\Component\\Routing\\' => 
+        'Symfony\\Component\\Debug\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/routing',
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
     );
 

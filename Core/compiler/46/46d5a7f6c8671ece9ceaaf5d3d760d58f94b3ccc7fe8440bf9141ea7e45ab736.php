@@ -24,23 +24,23 @@ class __TwigTemplate_728613a039068457d0907afdf93347773c48c7ba087cc23eb0d4afbbdec
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"\">
-    <link rel=\"icon\" href=\"favicon.ico\">
-    <title>TMF</title>
+    <link rel=\"icon\" href=\"http://localhost/Horizon/Styles/images/favicon.ico\">
+    <title>Horizon</title>
     <!-- Bootstrap core CSS -->
-    <link rel=\"stylesheet\" href=\"/Styles/vendor/bootstrap/bootstrap.min.css\" media=\"screen\" />
-    <link rel=\"stylesheet\" href=\"/Styles/vendor/css/datepicker.css\" media=\"screen\" />
+    <link rel=\"stylesheet\" href=\"/../Styles/vendor/bootstrap/bootstrap.min.css\" media=\"screen\" />
+    <link rel=\"stylesheet\" href=\"/../Styles/vendor/css/datepicker.css\" media=\"screen\" />
     <!-- Custom styles -->
-    <link rel=\"stylesheet\" href=\"/Styles/css/styles.css\" media=\"screen\" />
+    <link rel=\"stylesheet\" href=\"/../Styles/css/styles.css\" media=\"screen\" />
     ";
         // line 16
         if ((array_key_exists("controller", $context) && (($context["controller"] ?? null) == "login"))) {
             // line 17
-            echo "    <link rel=\"stylesheet\" href=\"/Styles/css/login.css\" media=\"screen\" />
+            echo "    <link rel=\"stylesheet\" href=\"/../Styles/css/login.css\" media=\"screen\" />
     ";
         }
         // line 19
         echo "    <!--core first + styles last-->
-    <link href=\"/Styles/vendor/fontawesome/css/fontawesome-all.css\" rel=\"stylesheet\" />
+    <link href=\"/../Styles/vendor/fontawesome/css/fontawesome-all.css\" rel=\"stylesheet\" />
   </head>";
     }
 
@@ -61,6 +61,6 @@ class __TwigTemplate_728613a039068457d0907afdf93347773c48c7ba087cc23eb0d4afbbdec
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "overall/head.twig", "C:\\xampp\\htdocs\\TMF\\App\\Templates\\overall\\head.twig");
+        return new Twig_Source("", "overall/head.twig", "C:\\xampp\\htdocs\\Horizon\\App\\Templates\\overall\\head.twig");
     }
 }

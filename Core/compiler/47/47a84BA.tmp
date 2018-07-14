@@ -1,0 +1,63 @@
+<?php
+
+/* home.twig */
+class __TwigTemplate_56684632adf37bfe7f484097fd0f88514277ffc3ae7dc68caf5e30171bbd23cc extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        $this->loadTemplate("overall/head.twig", "home.twig", 1)->display($context);
+        // line 2
+        echo "<body>
+\t<div class=\"container\">
+\t\t<div class=\"jumbotron mt-4\">
+\t\t\t<h1 class=\"display-3\"><i class=\"fas fa-rocket\"></i> ";
+        // line 5
+        echo twig_escape_filter($this->env, ($context["Title"] ?? null), "html", null, true);
+        echo "</h1>
+\t\t\t<p class=\"lead\">Framework compacto hecho en PHP 7.0, con componentes de Symfony y Twig como motor de Plantillas.</p>
+\t\t\t<hr class=\"m-y-md\">
+\t\t\t<p>Soporte Mysqli y estructura MVC, configuración sencilla y depurador de codigo.</p>
+\t\t\t<p class=\"lead\">
+\t\t\t\t<a class=\"btn btn-primary btn-lg\" href=\"/TMF/README.md\" role=\"button\"><i class=\"fas fa-book\"></i> Aprender más...</a>
+\t\t\t</p>
+\t\t</div>
+\t</div>
+";
+        // line 14
+        $this->loadTemplate("overall/footer.twig", "home.twig", 14)->display($context);
+        // line 15
+        echo "</body>
+</html>";
+    }
+
+    public function getTemplateName()
+    {
+        return "home.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  40 => 15,  38 => 14,  26 => 5,  21 => 2,  19 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("", "home.twig", "C:\\xampp\\htdocs\\TMF\\App\\Templates\\home.twig");
+    }
+}

@@ -1,9 +1,12 @@
 <?php 
 #Inicializador del framework
 use Core\init\config;
-use Symfony\Component\VarDumper\VarDumper;
-use Core\security\hashpwd;
 use Core\ruteo\router;
+use Core\ruteo\controllers;
+use Symfony\Component\VarDumper\VarDumper;
+use Symfony\Component\Debug\ExceptionHandler;
+use Symfony\Component\Debug\ErrorHandler;
+use Symfony\Component\Debug\Debug;
 
 #Versión Minima de PHP
 if (version_compare(phpversion(), '7.0.0', '<')) 
@@ -13,6 +16,11 @@ if (version_compare(phpversion(), '7.0.0', '<'))
 
 #Inicia las sesiones del navegador
 session_start();
+
+#Manejador de errores Symfony/Debug
+ErrorHandler::register();
+ExceptionHandler::register();
+Debug::enable();
 
 #Obtiene la configuaración del framework
 $config = (new Config)->readConfig();
@@ -25,7 +33,7 @@ $twig = new Twig_Environment($loader, array(
     'auto_reload' => $config['twig']['reload'],
 ));
 
-#Router del framework;
+#Router del framework
 $router = new router();
 
 $uri = $router->getUri();
@@ -36,4 +44,7 @@ $controller = $router->getController();
 #Configuración para México
 date_default_timezone_set($config['general']['timezone']);
 setlocale(LC_TIME, $config['general']['language']);
+
+#Manejo de los controladores
+$ctl = new controllers();
 ?>

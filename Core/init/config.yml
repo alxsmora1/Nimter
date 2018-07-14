@@ -3,16 +3,16 @@
 #Configuración de la base de datos
 database:
   host: localhost
-  name: LAB
+  name: smarty_lab
   user: root
-  pwd: 
+  pwd: ive8mxii
   port: 3306
   codification: UTF-8
   db_timezone: es_MX
 
 security:
-  secret_key: 
-  secret_iv: 
+  secret_key: alxsmora/95
+  secret_iv: bk_208#leeshe
   method: AES-256-CBC
 
 path:
