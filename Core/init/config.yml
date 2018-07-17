@@ -3,16 +3,16 @@
 #Configuración de la base de datos
 database:
   host: localhost
-  name: smarty_lab
+  name: lab
   user: root
-  pwd: ive8mxii
+  pwd: 
   port: 3306
   codification: UTF-8
   db_timezone: es_MX
 
 security:
-  secret_key: alxsmora/95
-  secret_iv: bk_208#leeshe
+  secret_key: 
+  secret_iv: 
   method: AES-256-CBC
 
 path:
@@ -23,7 +23,7 @@ path:
 general:
   timezone: America/Mexico_City
   language: spanish
-  path: localhost/TMF
+  path: http://localhost/Horizon/
 
 twig:
   compiler: Core/compiler/

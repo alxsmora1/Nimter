@@ -13,6 +13,10 @@ Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intu
 * APACHE 2
 * MariaDB 10.1 o superior
 
+##Recomendaciones
+* Mantener el archivo .htaccess
+* Usar URL absolutas como canon para archivos e imagenes en las vistas.
+
 ## Hecho con
 * Bootstrap 4.1 (https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 * Font Awesome 5.1.0 (https://fontawesome.com/)

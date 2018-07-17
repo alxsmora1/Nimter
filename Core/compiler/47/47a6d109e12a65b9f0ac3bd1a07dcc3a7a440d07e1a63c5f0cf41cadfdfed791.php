@@ -24,8 +24,8 @@ class __TwigTemplate_56684632adf37bfe7f484097fd0f88514277ffc3ae7dc68caf5e30171bb
         $this->loadTemplate("overall/topnav.twig", "home.twig", 4)->display($context);
         // line 5
         echo "\t<div class=\"container\">
-\t\t<br><br>
-\t\t<div class=\"jumbotron mt-5\">
+\t\t<br>
+\t\t<div class=\"jumbotron mt-3\">
 \t\t\t<h1 class=\"display-3\"><i class=\"fas fa-rocket\"></i> ";
         // line 8
         echo twig_escape_filter($this->env, ($context["Title"] ?? null), "html", null, true);
