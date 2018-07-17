@@ -4,7 +4,7 @@
 *  
 *  PHP versión 7.0
 *
-*  @package router
+*  @package ruteo
 *  @version 1.1.0
 *  
 */

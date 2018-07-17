@@ -3,11 +3,10 @@
 /**
 *  Clase para encriptar cadenas de texto.
 *  
-*  PHP versión 7
+*  PHP versión 7.0
 *
-*  @package models
-*  @license Closed code
-*  @version 1.2.0
+*  @package security
+*  @version 1.1.0
 *  
 */
 
