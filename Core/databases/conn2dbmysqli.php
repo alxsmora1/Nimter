@@ -1,67 +1,83 @@
 <?php 
 /**
-*  Clase para conectar a una base de datos MySQL/MariaDB de manera segura.
-*  
-*  PHP versión 7.0
-*
-*  @package databases
-*  @version 1.1.0
-*  
-*/
+ * Clase para conectar a una base de datos metodo mysqli.
+ *  
+ * PHP versión 7.0
+ *
+ * @package Horizon Framework
+ * @author Alexis Mora
+ */
 
 namespace Core\databases;
 use mysqli;
 
 class conn2dbmysqli extends mysqli
 {
-	protected $dbhost;		#String host
-	protected $dbuser;		#String user
-	protected $dbpwd;		#String pwd
-	protected $dbname;		#String name
-
-	#Constructor de la clase que proveé a la misma de la conexión.
+	
+	/** 
+     * Function __contruct
+     * Conecta con la base de datos.
+     */
 	public function __construct()
 	{
 		$this->conn2dbmysqli();
 	}
 
-	#Función protegida para conectar a la base de datos.
+	/**
+     * Function conn2dbPDO
+     * Configura la conexión a la base de datos.
+     */
 	protected function conn2dbmysqli()
 	{	
 		global $config;
+		
+		try 
+		{
+			parent::__construct($config['database']['host'],$config['database']['user'],$config['database']['pwd'],$config['database']['name']);
 
-		$this->dbhost = $config['database']['host'];
-		$this->dbuser = $config['database']['user'];
-		$this->dbpwd = $config['database']['pwd'];		
-		$this->dbname = $config['database']['name'];
+			//Configura la codificación
+			$this->query("SET NAMES ".$config['database']['codification'].";");
 
-		parent::__construct("$this->dbhost","$this->dbuser","$this->dbpwd","$this->dbname");
-		$this->query("SET NAMES utf8;");
-		//Cambia los parametros de las fechas al español
-		$this->query("SET lc_time_names = 'es_MX';");		
-		if( $this->connect_errno ) {
-			//echo "Error al conectar a la base de datos";
-		} else {
-			//echo "conectado...";
-		}
+			//Configura la región y zona horaria
+			$this->query("SET lc_time_names = '".$config['database']['timezone']."';");
+		} 
+		catch ( mysqli_sql_exception $e) 
+		{
+			echo __LINE__.$e->errorMessage();
+		}		
 	}
 
-	#Función publica para contar las filas de la consulta.
-	public function rows( $a )
+	/** 
+     * Function getRows
+     * Corre una función que cuenta los registros encontrados
+     * @param string $sql
+     * @return int|string -  Devuelve el numero de registros
+     */
+	public function getRows( $sql )
 	{
-		return mysqli_num_rows($a);
+		return mysqli_num_rows($sql);
 	}
 
-	#Función publica para recorrer el resultado de una consulta. 
-	public function recorrer( $a )
+	/** 
+     * Function getData
+     * Corre una función de tipo SELECT
+     * @param string $sql
+     * @return array - Devuelve los datos del SELECT
+     */
+	public function getData( $sql )
 	{
-		return mysqli_fetch_array($a);
+		return mysqli_fetch_array($sql);
 	}
 
-	#Función publica liberar la memoria de la consulta.
-	public function freem( $a )
+    /** 
+     * Function freeQuery
+     * Libera la memoria de una consulta
+     * @param string $sql
+     * @return boolean 
+     */
+	public function freeQuery( $sql )
 	{
-		return mysqli_free_result($a);
+		return mysqli_free_result($sql);
 	}
 }
 ?>

@@ -1,11 +1,11 @@
 <?php
 /**
-*  Modelo para el modulo de Home
+*  Modelo home
 *  
 *  PHP versión 7.0
 *
-*  @package controllers
-*  @version 1.1.0
+*  @package Controllers
+*  @author 	
 *           
 */
 
@@ -13,9 +13,10 @@ namespace App\Models;
 
 class home
 {
+
 	public function bienvenida()
 	{
-		echo "Horizon PHP Framework";
+		return "Horizon PHP Framework";
 	}
 }
  ?>

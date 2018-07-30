@@ -1,34 +1,41 @@
 <?php 
 /**
-*  Clase para el ruteo.
-*  
-*  PHP versión 7.0
-*
-*  @package ruteo
-*  @version 1.1.0
-*  
-*/
+ *  Clase para controlar los errores en los controladores
+ *  
+ *  PHP versión 7.0
+ *
+ * @package Horizon Framework
+ * @author Alexis Mora
+ *  
+ */
+
 namespace Core\ruteo;
 
 class controllers
 {
+	/** 
+     * Function routeController
+     * Busca el archivo con el controlador requerido por la url, de no hallarlo redirige al home
+     * @param string $text
+     * @return string -  Devuelve una cadena con la ruta del controlador.
+     */
 	public function routeController($controller)
 	{
 		global $config;
 
 		//URL del controlador
-		$urlController = $config['path']['controllers'] . "{$controller}.php";
+		$urlController = $config['path']['controllers'] . "{$controller}Controller.php";
 
-		//Verifica si existe el controlador, de lo contrario se envia al home
+		//Verifica si existe el controlador, de lo contrario redirige al home
 		if ( file_exists($urlController) ) 
 		{
-			$controllerX = $urlController;
+			$pathController = $urlController;
 		} 
 		else 
 		{
-			$controllerX = $config['path']['controllers'] . "home.php";;
+			$pathController = "404.shtml";
 		}
 		
-		return $controllerX;
+		return $pathController;
 	}
 }

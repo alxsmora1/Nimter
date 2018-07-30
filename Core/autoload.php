@@ -1,13 +1,23 @@
 <?php
+/**
+*  Clase para caragar las clases/modulos del Core del Framework
+*  
+*  PHP versión 7.0
+*
+*  @package Core
+*  @version 1.1.0
+*  
+*/
+
 spl_autoload_register('__autoload');
 
-function __autoload(string $class) 
+function __autoload(string $modules) 
 {
-    $class = str_replace('\\', '/', $class);
+    $modules = str_replace('\\', '/', $modules);
     
-    if (is_readable($class . '.php')) 
+    if ( is_readable($modules . '.php') ) 
     {
-        require_once $class . '.php';
+        require_once $modules . '.php';
     }
 }
 ?>

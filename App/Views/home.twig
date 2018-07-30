@@ -1,0 +1,19 @@
+{# Plantilla home #}
+{% include 'overall/head.twig' %}
+<body>
+	{% include 'overall/topnav.twig' %}
+	<div class="container">
+		<br>
+		<div class="jumbotron mt-3">
+			<h1 class="display-3"><i class="fas fa-rocket"></i> {{ Titulo }}</h1>
+			<p class="lead">Framework hecho en PHP 7.0, con componentes de Symfony y Twig como motor de Plantillas.</p>
+			<hr class="m-y-md">
+			<p>Soporte Mysqli/PDO y estructura MVC, configuración sencilla y depurador de codigo.</p>
+			<p class="lead">
+				<a class="btn btn-primary btn-lg" href="https://bitbucket.org/alxsmora/horizon/wiki/Home" target="_BLANK" role="button"><i class="fas fa-book"></i> Documentación Oficial</a>
+			</p>
+		</div>
+	</div>
+{% include 'overall/footer.twig' %}
+</body>
+</html>

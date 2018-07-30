@@ -1,30 +1,44 @@
-#Configuraciones generales del Framework
+##############################################
+#         Archivo de Configuración           #
+##############################################
 
 #Configuración de la base de datos
 database:
+  driver: mysql
   host: localhost
-  name: lab
+  name: 
   user: root
   pwd: 
   port: 3306
-  codification: UTF-8
-  db_timezone: es_MX
+  codification: utf8
+  timezone: es_MX
 
+#Configuración del cifrado
 security:
-  secret_key: 
-  secret_iv: 
+  secret_key: 123456
+  secret_iv: 123456
   method: AES-256-CBC
 
+#Configuracón de las rutas
 path:
-  templates: App/Templates/
+  views: App/Views/
   controllers: App/Controllers/
   models: App/Models/
 
+#Configuración general operativa del Framework
 general:
   timezone: America/Mexico_City
   language: spanish
   path: http://localhost/Horizon/
+  debug: true
 
+#Configuración de Twig
 twig:
   compiler: Core/compiler/
   reload: true
+
+#Datos del desarrollador
+developer:
+  author: Alexis Mora
+  company:  Horizon
+  email:  alexis.mora@correo.com
