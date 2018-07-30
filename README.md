@@ -1,8 +1,8 @@
-# Horizon PHP microFramework
+# Horizon PHP Framework
 
 ## Descripción del proyecto
 ------
-Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intuittiva. Cuenta con el esquema de diseño MVC, diferenciable de otros Frameworks debido a la simpleza en el manejo de sus controladores que no son clases. Cuenta con esquema de para base de datos Mysqli.
+Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intuittiva. Cuenta con el esquema de diseño MVC, diferenciable de otros Frameworks debido a la simpleza en el manejo de sus controladores que no son clases. Cuenta con esquema de para conexión a base de datos Mysqli y PDO. Horizon está orientado para proyectos y enseñanza del lenguaje PHP.
 
 ![Home del Framework](https://firebasestorage.googleapis.com/v0/b/horizon-81484.appspot.com/o/Horizon.png?alt=media&token=37c67d3a-0761-423b-b1d4-9a9d5d2532cb "Home del Framework")
 
@@ -14,7 +14,6 @@ Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intu
 ------
 * PHP 7.0 o superior
 * APACHE 2
-* MariaDB 10.1 o superior
 
 ## Recomendaciones
 ------
