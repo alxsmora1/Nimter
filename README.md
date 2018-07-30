@@ -27,6 +27,8 @@ Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intu
 * Jquery 3.1.1 (https://jquery.com/)
 * Twig 2.4 (https://twig.symfony.com/doc/2.x/)
 * Symfony/var-dumper 4.1.0 (https://symfony.com/doc/current/components/var_dumper.html)
+* Symfony/debug 4.1.0 (https://symfony.com/doc/current/components/debug.html)
+* Symfony/routing 4.1.0 (https://symfony.com/doc/current/components/routing.html)
 * Symfony/yaml 4.1.0 (https://symfony.com/doc/current/components/yaml.html)
 
 ## Autor
