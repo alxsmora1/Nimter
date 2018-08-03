@@ -76,32 +76,34 @@ class smarter
 		$config = (new config)->generalConfig();
 
 		$model = 
-		"<?php 
+"<?php 
 
-		/**
-		 *  Clase ".$cl2."
-		 *  
-		 *  PHP versión 7
-		 *
-		 *  @package models
-		 *  @author ".$config['developer']['author']."
-		 *  
-		 */
+/**
+ *  Clase ".$cl2."
+ *  
+ *  PHP versión 7
+ *
+ *  @package models
+ *  @author ".$config['developer']['author']."
+ *  
+ */
 
-		class ".$cli2."
-		{
-			
-			function __construct()
-			{
-				# code here...
-			}
-			
-			public function ".$cli2."_func()
-			{
-				# code here...
-			}
-		}
-		?>";
+namespace App\Models;
+
+class ".$cli2."
+{
+	
+	function __construct()
+	{
+		# code here...
+	}
+	
+	public function ".$cli2."_func()
+	{
+		# code here...
+	}
+}
+?>";
 		$url = $config['path']['models'].$cli2.'.php';
 		if ( file_exists($url) ) 
 		{
