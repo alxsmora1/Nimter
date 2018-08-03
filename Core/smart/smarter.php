@@ -79,7 +79,7 @@ class smarter
 "<?php 
 
 /**
- *  Clase ".$cl2."
+ *  Clase ".$cli2."
  *  
  *  PHP versión 7
  *
