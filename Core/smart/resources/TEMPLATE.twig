@@ -1,6 +1,7 @@
-{# Plantilla basica #}
-{% include 'overall/head.twig' %}
-<body>
+{# Plantilla home #}
+{% extends 'overall/template.twig' %}
+
+{% block body %}
 	{% include 'overall/topnav.twig' %}
 	<div class="container">
 		<div class="row">
@@ -9,6 +10,4 @@
 			</div>
 		</div>
 	</div>
-{% include 'overall/footer.twig' %}
-</body>
-</html>
+{% endblock  %}
