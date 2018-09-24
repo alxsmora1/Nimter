@@ -10,8 +10,8 @@
  */
 
 use Core\init\config;
-use Core\ruteo\router;
-use Core\ruteo\controllers;
+use Core\router\routerx;
+use Core\router\controllers;
 use Symfony\Component\VarDumper\VarDumper;
 use Symfony\Component\Debug\ExceptionHandler;
 use Symfony\Component\Debug\ErrorHandler;
@@ -24,6 +24,7 @@ if (version_compare(phpversion(), '7.0', '<'))
 }
 
 //Inicia las sesiones del navegador
+session_name('Horizon');
 session_start();
 
 //Obtiene la configuaración del framework
@@ -47,10 +48,11 @@ $twig = new Twig_Environment($loader, array(
 ));
 
 //Router del framework
-$router = new router();
-$method = $router->getMethod();
-$param = $router->getParam();
-$controller = $router->getController();
+$routerx = new routerx();
+$uri = $routerx->getRoutes();
+$controller = $uri[1] === '' ? 'home' : $uri[1];
+$method = !empty($uri[2]) ? $uri[2] : '';
+$param = !empty($uri[3]) ? $uri[3] : '';
 
 //Configuración de la region y zona horaria
 date_default_timezone_set($config['general']['timezone']);

@@ -102,6 +102,6 @@ class __TwigTemplate_bbbc9fbe9b9b81b7770092567d16f31d45590566e4c5923017351c09fd8
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "overall/template.twig", "C:\\xampp\\htdocs\\HorizonOriginal\\App\\Views\\overall\\template.twig");
+        return new Twig_Source("", "overall/template.twig", "C:\\xampp\\htdocs\\horizon\\App\\Views\\overall\\template.twig");
     }
 }

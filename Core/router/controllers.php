@@ -9,7 +9,7 @@
  *  
  */
 
-namespace Core\ruteo;
+namespace Core\router;
 
 class controllers
 {

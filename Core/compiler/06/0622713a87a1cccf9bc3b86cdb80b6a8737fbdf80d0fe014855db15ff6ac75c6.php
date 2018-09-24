@@ -66,6 +66,6 @@ class __TwigTemplate_cafe284665c5a16cfbb5293a360d8ac6ff20e695b47dd784afade211d58
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "home.twig", "C:\\xampp\\htdocs\\HorizonOriginal\\App\\Views\\home.twig");
+        return new Twig_Source("", "home.twig", "C:\\xampp\\htdocs\\horizon\\App\\Views\\home.twig");
     }
 }
