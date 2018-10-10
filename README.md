@@ -23,13 +23,13 @@ Framework PHP sencillo y compacto, de facil aprendizaje y de configuración intu
 
 ## Hecho con
 ------
-* Bootstrap 4.1 (https://getbootstrap.com/docs/4.1/getting-started/introduction/)
-* Font Awesome 5.2.0 (https://fontawesome.com/)
-* Jquery 3.1.1 (https://jquery.com/)
-* Twig 2.4 (https://twig.symfony.com/doc/2.x/)
-* Symfony/var-dumper 4.1.0 (https://symfony.com/doc/current/components/var_dumper.html)
-* Symfony/debug 4.1.0 (https://symfony.com/doc/current/components/debug.html)
-* Symfony/yaml 4.1.0 (https://symfony.com/doc/current/components/yaml.html)
+* [Bootstrap 4.1](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+* [Font Awesome 5.2.0](https://fontawesome.com/)
+* [Jquery 3.1.1](https://jquery.com/)
+* [Twig 2.4](https://twig.symfony.com/doc/2.x/)
+* [Symfony/var-dumper 4.1.0](https://symfony.com/doc/current/components/var_dumper.html)
+* [Symfony/debug 4.1.0](https://symfony.com/doc/current/components/debug.html)
+* [Symfony/yaml 4.1.0](https://symfony.com/doc/current/components/yaml.html)
 
 ## Autor
 ------
