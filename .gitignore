@@ -6,3 +6,9 @@ php_errors.log
 
 #Paquete de composer
 composer.json
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
