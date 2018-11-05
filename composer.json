@@ -10,9 +10,11 @@
 		}
 	],
 	"require": {
-		"php": "^7.0.0"
+		"php": ">=7.0.0"
 	},
 	"autoload": {
 		"files": ["Extension.php"]
-	}
+	},
+	"minimum-stability": "dev",
+    "prefer-stable": true
 }
