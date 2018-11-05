@@ -15,10 +15,12 @@
 	"require": {
 		"php": ">=7.0.0",
 		"symfony/yaml": "^4.1",
-        "symfony/var-dumper": "^4.1",
-        "twig/twig": "2.0",
-        "symfony/debug": "^4.1"
+        "twig/twig": "2.0"
 	},
+	"require-dev": {
+		"symfony/var-dumper": "^4.1",
+		"symfony/debug": "^4.1"
+    },
 	"autoload": {
 		"files": ["Extension.php"]
 	},
