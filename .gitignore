@@ -11,6 +11,6 @@ npm-debug.log
 yarn-error.log
 
 ###> Packages vendor
-Core/vendor/
+Core/vendor/*
 Core/composer.lock
 Core/composer.json
