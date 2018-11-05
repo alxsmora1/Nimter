@@ -1,4 +1,7 @@
 {
+	"config": {
+        "vendor-dir": "Core/vendor"
+    },
 	"name": "alxsmora/nimter",
 	"type": "library",
 	"description": "Framework PHP",
@@ -10,7 +13,11 @@
 		}
 	],
 	"require": {
-		"php": ">=7.0.0"
+		"php": ">=7.0.0",
+		"symfony/yaml": "^4.1",
+        "symfony/var-dumper": "^4.1",
+        "twig/twig": "2.0",
+        "symfony/debug": "^4.1"
 	},
 	"autoload": {
 		"files": ["Extension.php"]
