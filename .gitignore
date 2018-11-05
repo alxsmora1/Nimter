@@ -9,3 +9,8 @@ php_errors.log
 /public/build/
 npm-debug.log
 yarn-error.log
+
+###> Packages vendor
+Core/vendor/
+Core/composer.lock
+Core/composer.json
