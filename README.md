@@ -5,7 +5,6 @@
 ## Descripción del proyecto
 ------
 Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con el esquema de diseño MVC, es escalable,se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta con clases  para conexión a base de datos a través de Mysqli y PDO. Horizon está orientado para proyectos web y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
-![Home del Framework](https://firebasestorage.googleapis.com/v0/b/horizon-81484.appspot.com/o/screenshot.jpg?alt=media&token=830fee02-f363-4ed2-8fa7-e9de39e91c16 "Home del Framework")
 
 ## Requerimientos
 ------
