@@ -4,6 +4,9 @@
 # Bitacora de errores de PHP
 php_errors.log
 
+#Cache de Twig
+Core/compiler/*
+
 ###> symfony/webpack-encore-pack ###
 /node_modules/
 /public/build/
@@ -15,3 +18,4 @@ Core/vendor/
 Core/composer.lock
 Core/composer.json
 composer.lock
+
