@@ -4,7 +4,7 @@
  *    
  * PHP versión 7.0
  *
- * @package Horizon Framework
+ * @package Nimter Framework
  * @author Alexis Mora
  *  
  */
@@ -24,7 +24,7 @@ if (version_compare(phpversion(), '7.0', '<'))
 }
 
 //Inicia las sesiones del navegador
-session_name('Horizon');
+session_name('Nimter');
 session_start();
 
 //Obtiene la configuaración del framework

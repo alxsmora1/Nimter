@@ -1,42 +1,42 @@
 <?php
 /**
-* Generador CLI para Horizon
+* Automatización / Generador CLI para Nimter
 *    
 * PHP versión 7
 *
-* @package Horizon Framework
+* @package Nimter Framework
 * @author Alexis Mora
 *  
 */
 
 require_once ('Core/autoload.php');
 require_once ('Core/vendor/autoload.php');
-use Core\smart\smarter;
+use Core\lina\lina;
 
-$sm = new smarter();
+$ln = new lina();
 		
-#Lectura de parametros desde cli.
+//Lectura de parametros desde cli.
 $cli = $argv[1];
 $cli2 = $argv[2];
 $cli3 = $argv[3];
 
-#Metodos validos que acepta el generador de codigo smart.
+//Metodos validos.
 switch ($cli) 
 {
 	case '--help':
-		$sm->help();
+		$ln->help();
 		break;
 	
 	case '--version':
-		$sm->version();
+		$ln->version();
 		break;
 
 	case '--license':
-		$sm->license();
+		$ln->license();
 		break;
 	
 	default:
-		$sm->generar($cli,$cli2,$cli3);
+		$ln->generar($cli,$cli2,$cli3);
 		break;
 }
 ?>

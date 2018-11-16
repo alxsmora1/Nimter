@@ -42,7 +42,7 @@ class __TwigTemplate_cafe284665c5a16cfbb5293a360d8ac6ff20e695b47dd784afade211d58
 \t\t\t<hr class=\"m-y-md\">
 \t\t\t<p>Soporte Mysqli/PDO y estructura MVC, configuración sencilla y depurador de codigo.</p>
 \t\t\t<p class=\"lead\">
-\t\t\t\t<a class=\"btn btn-primary btn-lg\" href=\"https://bitbucket.org/alxsmora/horizon/wiki/Home\" target=\"_BLANK\" role=\"button\"><i class=\"fas fa-book\"></i> Documentación Oficial</a>
+\t\t\t\t<a class=\"btn btn-primary btn-lg\" href=\"https://bitbucket.org/alxsmora/nimter/wiki/Home\" target=\"_BLANK\" role=\"button\"><i class=\"fas fa-book\"></i> Documentación Oficial</a>
 \t\t\t</p>
 \t\t</div>
 \t</div>
@@ -66,6 +66,6 @@ class __TwigTemplate_cafe284665c5a16cfbb5293a360d8ac6ff20e695b47dd784afade211d58
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "home.twig", "C:\\xampp\\htdocs\\horizon\\App\\Views\\home.twig");
+        return new Twig_Source("", "home.twig", "D:\\Bitbucket\\nimterV1\\App\\Views\\home.twig");
     }
 }

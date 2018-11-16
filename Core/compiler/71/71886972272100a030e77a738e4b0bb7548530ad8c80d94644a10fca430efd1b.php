@@ -63,11 +63,11 @@ class __TwigTemplate_bbbc9fbe9b9b81b7770092567d16f31d45590566e4c5923017351c09fd8
     {
         // line 14
         echo "        <!-- Bootstrap core CSS -->
-        <link rel=\"stylesheet\" href=\"http://localhost/horizon/Styles/vendor/bootstrap/bootstrap.min.css\" media=\"screen\" />
+        <link rel=\"stylesheet\" href=\"Styles/vendor/bootstrap/bootstrap.min.css\" media=\"screen\" />
         <!-- Custom styles -->
-        <link rel=\"stylesheet\" href=\"http://localhost/horizon/Styles/css/styles.css\" media=\"screen\" />
+        <link rel=\"stylesheet\" href=\"Styles/css/styles.css\" media=\"screen\" />
         <!--core first + styles last-->
-        <link href=\"http://localhost/horizon/Styles/vendor/fontawesome/css/fontawesome-all.css\" rel=\"stylesheet\" />
+        <link href=\"Styles/vendor/fontawesome/css/fontawesome-all.css\" rel=\"stylesheet\" />
         ";
     }
 
@@ -83,10 +83,10 @@ class __TwigTemplate_bbbc9fbe9b9b81b7770092567d16f31d45590566e4c5923017351c09fd8
         echo "        <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src=\"http://localhost/horizon/Styles/vendor/jquery/jquery-3.2.1.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-        <script src=\"http://localhost/horizon/Styles/vendor/js/popper.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-        <script src=\"http://localhost/horizon/Styles/vendor/js/holder.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
-        <script src=\"http://localhost/horizon/Styles/vendor/bootstrap/bootstrap.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+        <script src=\"Styles/vendor/jquery/jquery-3.2.1.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+        <script src=\"Styles/vendor/js/popper.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+        <script src=\"Styles/vendor/js/holder.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
+        <script src=\"Styles/vendor/bootstrap/bootstrap.min.js\" type=\"text/javascript\" charset=\"utf-8\"></script>
         ";
     }
 
@@ -102,6 +102,6 @@ class __TwigTemplate_bbbc9fbe9b9b81b7770092567d16f31d45590566e4c5923017351c09fd8
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "overall/template.twig", "C:\\xampp\\htdocs\\horizon\\App\\Views\\overall\\template.twig");
+        return new Twig_Source("", "overall/template.twig", "D:\\Bitbucket\\nimterV1\\App\\Views\\overall\\template.twig");
     }
 }

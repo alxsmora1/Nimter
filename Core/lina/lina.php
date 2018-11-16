@@ -1,19 +1,19 @@
 <?php 
 /**
- * Generador de archivos por consola
+ * LINA, automatización de la linea de comandos / generador de archivos
  *    
  * PHP versión 7.0
  *
- * @package Horizon Framework
+ * @package Nimter Framework
  * @author Alexis Mora
  *  
  */
 
-namespace Core\smart;
+namespace Core\lina;
 
 use Core\init\config;
 
-class smarter
+class lina
 {
 	/** 
      * Function getRows
@@ -220,7 +220,7 @@ echo $twig->render(\''.$cli2.'.twig\', array(
      */
 	public function version()
 	{
-		print_r("Horizon 2018 Versión 1.0");
+		print_r("Nimter 2018 Versión 1.0");
 	}
 
 	/** 

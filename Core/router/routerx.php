@@ -4,7 +4,7 @@
  *  
  * PHP versión 7.0
  *
- * @package Horizon Framework
+ * @package Nimter Framework
  * @author Alexis Mora
  *  
  */

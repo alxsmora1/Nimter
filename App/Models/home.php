@@ -16,7 +16,7 @@ class home
 
 	public function bienvenida()
 	{
-		return "Horizon PHP Framework";
+		return "Nimter PHP Framework";
 	}
 }
  ?>
