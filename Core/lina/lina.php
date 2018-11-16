@@ -1,7 +1,7 @@
 <?php 
 /**
  * LINA, automatización de la linea de comandos / generador de archivos
- *    
+ * 
  * PHP versión 7.0
  *
  * @package Nimter Framework
@@ -26,11 +26,11 @@ class lina
 	{
 		//Division los argumentos pasados a través del cli.
 		$read = explode(':',$cli);
-		if ( $read[0] != 'smart' )
+		if ( $read[0] != 'app' )
 		{
 			print_r("No se reconoce el comando ".$cli."\n");
-			print_r("El comando debe ser: smart:mvc nombre\n");
-			print_r("Para ver la ayuda use el comando: smart.php --Help");
+			print_r("El comando debe ser: app:mvc nombre\n");
+			print_r("Para ver la ayuda use el comando: app.php --Help");
 		}
 		else
 		{
@@ -132,9 +132,9 @@ class ".$cli2."
 	{
 		$config = (new config)->generalConfig();
 
-		if (file_exists('Core/smart/resources/TEMPLATE.twig')) 
+		if (file_exists('Core/lina/resources/TEMPLATE.twig')) 
 		{
-			$template = file_get_contents('Core/smart/resources/TEMPLATE.twig');
+			$template = file_get_contents('Core/lina/resources/TEMPLATE.twig');
 			$url = $config['path']['views'].$cli2.'.twig';
 			if ( file_exists($url) ) 
 			{
@@ -209,7 +209,7 @@ echo $twig->render(\''.$cli2.'.twig\', array(
      */
 	public function help()
 	{
-		print_r("MVC Para generar un Modelo Vista Controlador debe de usar el siguiente comando: smart:mvc Nombre_archivo. Tambien puede crear solo un tipo de archivo ej. smart:m Nombre_archivo.\n");
+		print_r("MVC Para generar un Modelo Vista Controlador debe de usar el siguiente comando: app:mvc Nombre_archivo. Tambien puede crear solo un tipo de archivo ej. app:m Nombre_archivo.\n");
 		print_r("--version Provee la versión del framework.\n");
 		print_r("--license Provee la licencia del framework.\n");
 	}
