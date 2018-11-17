@@ -55,7 +55,7 @@ class __TwigTemplate_bbbc9fbe9b9b81b7770092567d16f31d45590566e4c5923017351c09fd8
     // line 12
     public function block_title($context, array $blocks = array())
     {
-        echo "Horizon Framework";
+        echo "Nimter Framework";
     }
 
     // line 13
