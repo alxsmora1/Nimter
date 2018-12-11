@@ -2,8 +2,8 @@ RewriteEngine on
 
 Options -Indexes
 
-ErrorDocument 403 /Horizon/403.shtml
-ErrorDocument 404 /Horizon/404.shtml
+ErrorDocument 403 /403.shtml
+ErrorDocument 404 /404.shtml
 
 RewriteCond %{REQUEST_FILENAME} !-f
 

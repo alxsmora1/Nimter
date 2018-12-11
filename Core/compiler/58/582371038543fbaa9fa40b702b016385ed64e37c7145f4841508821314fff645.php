@@ -17,7 +17,7 @@ class __TwigTemplate_96c9911354c09a5a338e848391f4b7638a3baadc512133e3413e926791d
     {
         // line 1
         echo "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">
-  <a class=\"navbar-brand\" href=\"/horizon/home\"><i class=\"fas fa-home\"></i> Horizon</a>
+  <a class=\"navbar-brand\" href=\"/home\"><i class=\"fas fa-home\"></i> Nimter</a>
   <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
     <span class=\"navbar-toggler-icon\"></span>
   </button>
@@ -36,6 +36,6 @@ class __TwigTemplate_96c9911354c09a5a338e848391f4b7638a3baadc512133e3413e926791d
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "overall/topnav.twig", "C:\\xampp\\htdocs\\horizon\\App\\Views\\overall\\topnav.twig");
+        return new Twig_Source("", "overall/topnav.twig", "D:\\Bitbucket\\nimterV1\\App\\Views\\overall\\topnav.twig");
     }
 }

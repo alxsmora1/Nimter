@@ -6,22 +6,21 @@
 ------
 Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con el esquema de diseño MVC, es escalable,se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta con clases  para conexión a base de datos a través de Mysqli y PDO. Horizon está orientado para proyectos web y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
 
-##Instalación
-* Se requiere [Composer](https://getcomposer.org/)
-
-## Instalación Packagist
-------
-* En la consola corre el comando: composer create-project "alxsmora/nimter:1.1.*"
-
-## Instalación BitBucket
-------
-* BitBucket: git clone https://alxsmora@bitbucket.org/alxsmora/nimter.git, 
-* Una vez finalizada la instalación en la carpeta Core corre el comando por consola: composer install
-
 ## Requerimientos
 ------
 * PHP 7.0 o superior
 * APACHE 2
+* Se requiere [Composer](https://getcomposer.org/)
+
+## Instalación Packagist
+------
+* En la consola correr el comando: composer create-project "alxsmora/nimter:1.1.*"
+
+## Instalación BitBucket
+------
+* BitBucket: git clone https://alxsmora@bitbucket.org/alxsmora/nimter.git, 
+* Una vez finalizada la instalación en la dentro del directorio /Core, através de la consola correr el comando: composer install
+
 
 ## Recomendaciones
 ------
