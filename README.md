@@ -1,6 +1,6 @@
 # Nimter PHP Framework
 
-![Version](https://img.shields.io/badge/version-1.1.0-orange.svg)	![Version](https://img.shields.io/badge/status-stable-green.svg)	![License](https://img.shields.io/badge/license-MIT-blue.svg) 
+![Version](https://img.shields.io/badge/version-1.1.2-orange.svg)	![Version](https://img.shields.io/badge/status-stable-green.svg)	![License](https://img.shields.io/badge/license-MIT-blue.svg) 
 
 ## Descripción del proyecto
 ------
