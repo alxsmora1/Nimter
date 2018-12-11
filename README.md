@@ -4,7 +4,7 @@
 
 ## Descripción del proyecto
 ------
-Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con el esquema de diseño MVC, es escalable,se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta con clases  para conexión a base de datos a través de Mysqli y PDO. Horizon está orientado para proyectos web y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
+Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con el esquema de diseño MVC, es escalable, se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta con clases  para conexión a base de datos a través de Mysqli y PDO. nimter está orientado para proyectos web pequeños y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
 
 ## Requerimientos
 ------
@@ -14,13 +14,21 @@ Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuent
 
 ## Instalación Packagist
 ------
-* En la consola correr el comando: composer create-project "alxsmora/nimter:1.1.*"
+* En la consola correr el comando: 
+```shell 
+composer create-project "alxsmora/nimter:1.1.*" 
+```
 
 ## Instalación BitBucket
 ------
-* BitBucket: git clone https://alxsmora@bitbucket.org/alxsmora/nimter.git, 
-* Una vez finalizada la instalación en la dentro del directorio /Core, através de la consola correr el comando: composer install
-
+* BitBucket: 
+```shell 
+git clone https://alxsmora@bitbucket.org/alxsmora/nimter.git, 
+```
+* Una vez finalizada la instalación en la dentro del directorio /Core, através de la consola correr el comando: 
+```shell
+composer install
+```
 
 ## Recomendaciones
 ------
@@ -29,13 +37,18 @@ Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuent
 
 ## Hecho con
 ------
+### Requerido
+* [Twig 2](https://twig.symfony.com/doc/2.x/)
+* [Symfony/yaml](https://symfony.com/doc/current/components/yaml.html)
+
+### Estilos
 * [Bootstrap 4.1](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
 * [Font Awesome 5.2.0](https://fontawesome.com/)
 * [Jquery 3.1.1](https://jquery.com/)
-* [Twig 2.4](https://twig.symfony.com/doc/2.x/)
-* [Symfony/var-dumper 4.1.0](https://symfony.com/doc/current/components/var_dumper.html)
-* [Symfony/debug 4.1.0](https://symfony.com/doc/current/components/debug.html)
-* [Symfony/yaml 4.1.0](https://symfony.com/doc/current/components/yaml.html)
+
+### Dev
+* [Symfony/var-dumper](https://symfony.com/doc/current/components/var_dumper.html)
+* [Symfony/debug](https://symfony.com/doc/current/components/debug.html)
 
 ## Autor
 ------
