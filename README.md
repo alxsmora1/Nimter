@@ -1,4 +1,4 @@
-# Nimter PHP MicroFramework
+# Nimter PHP Framework
 
 ![Version](https://img.shields.io/badge/version-1.1.2-orange.svg)   ![License](https://img.shields.io/badge/license-MIT-blue.svg) 
 
