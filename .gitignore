@@ -7,15 +7,7 @@ php_errors.log
 #Nimter Cache
 Nimter/Core/cache/twig
 
-###> symfony/webpack-encore-pack ###
-/node_modules/
-/public/build/
-npm-debug.log
-yarn-error.log
-
-###> Packages vendor
-Core/vendor/
-Core/composer.lock
-Core/composer.json
-composer.lock
+###> Composer packages
+Nimter/vendor/
+Nimter/composer.lock
 
