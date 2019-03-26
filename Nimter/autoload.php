@@ -1,13 +1,14 @@
 <?php
 /**
-*  Clase para caragar las clases/modulos del Core del Framework
-*  
-*  PHP versión 7.0
-*
-*  @package Nimter
-*  @version 1.2.0
-*  
-*/
+ * Clase para caragar las clases/modulos del Core del Framework
+ *  
+ * PHP versión 7.0
+ *
+ * @package Nimter
+ * @version 1.2.0
+ * @author Alexis Mora
+ *  
+ **/
 
 spl_autoload_register(function ($modules) 
 {
