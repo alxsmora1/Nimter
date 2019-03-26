@@ -1,10 +1,10 @@
-# Nimter PHP Framework
+# Nimter PHP MicroFramework
 
 ![Version](https://img.shields.io/badge/version-1.2.0-orange.svg)   ![License](https://img.shields.io/badge/license-MIT-blue.svg) 
 
 ## Descripción del proyecto
 
-Framework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con esquema de diseño MVC, es escalable y configurable. Se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta una clase para conexión a base de datos a través de PDO con soporte para Mysql/MariaDB y SQLite. Nimter está orientado para proyectos web pequeños y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
+MicroFramework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con esquema de diseño MVC, es escalable y configurable. Se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta una clase para conexión a base de datos a través de PDO con soporte para Mysql/MariaDB y SQLite. Nimter está orientado para proyectos web pequeños y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
 
 ## Requerimientos
 
