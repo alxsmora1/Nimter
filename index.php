@@ -1,14 +1,19 @@
 <?php 
 /**
-*  Index 
-*  
-*  PHP versión 7.0
-*
-*  @package Nimter Framework
-*/
+ *  Index root
+ *  
+ * PHP versión 7.1.3
+ *
+ * @package Nimter Framework
+ * @author Alexis Mora
+ * @version 1.2.0
+ * 
+ **/
 
-//Inicializa el framework
-require_once ('Core/autoload.php');
-require_once ('Core/vendor/autoload.php');
-require_once ('Core/init/init.php');
+//Define la ruta por defecto del framework
+define('__PATH__', '');
+
+//Carga el framework
+require_once (__PATH__.'Nimter/Core/init/init.php');
+
 ?>
