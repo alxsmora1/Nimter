@@ -1,4 +1,5 @@
-# Archivos generados por PHPCodeIntel en Sublime Text 3
+# Archivos generados por VSCode
+.vscode/
 .phpintel/*
 
 # Bitacora de errores de PHP
