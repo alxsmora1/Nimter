@@ -11,3 +11,7 @@ Nimter/Core/cache/twig
 ###> Composer packages
 Nimter/vendor/
 Nimter/composer.lock
+
+###> PHPUnit Tests
+.phpunit.result.cache
+Nimter/Tests
