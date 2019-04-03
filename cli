@@ -1,42 +1,21 @@
+#!/usr/bin/env php
 <?php
 /**
-* Automatización / Generador CLI para Nimter
-*    
-* PHP versión 7
-*
-* @package Nimter Framework
-* @author Alexis Mora
-*  
-*/
+ * Este archivo forma parte del Framework Nimter.
+ *
+ * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
+ *  
+ * PHP versión 7.1.3
+ *
+ * @package Nimter\Core\controllers
+ * @author Alexis Mora <alexis.mora1v@gmail.com>
+ * @version 1.2.0
+ */
 
-require_once ('Core/autoload.php');
-require_once ('Core/vendor/autoload.php');
-use Core\lina\lina;
+require_once('Nimter/autoload.php');
+require_once('Nimter/vendor/autoload.php');
 
-$ln = new lina();
-		
-//Lectura de parametros desde cli.
-$cli = $argv[1];
-$cli2 = $argv[2];
-$cli3 = $argv[3];
+use Nimter\Core\lina\lina;
 
-//Metodos validos.
-switch ($cli) 
-{
-	case '--help':
-		$ln->help();
-		break;
-	
-	case '--version':
-		$ln->version();
-		break;
-
-	case '--license':
-		$ln->license();
-		break;
-	
-	default:
-		$ln->generar($cli,$cli2,$cli3);
-		break;
-}
-?>
+$lina = new lina($argv);
+?> 
