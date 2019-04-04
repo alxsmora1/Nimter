@@ -1,18 +1,26 @@
 <?php
 /**
- * Clase para mantener las sesiones del navegador
+ * Este archivo forma parte del Framework Nimter.
+ *
+ * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
  *  
  * PHP versión 7.1.3
  *
- * @package Nimter Framework
- * @author Alexis Mora
+ * @package Nimter\Core\router
+ * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.2.0
+ */
+
+namespace Nimter\Core\Helpers;
+
+use Nimter\Core\Init\ConfigReader as config;
+
+/**
+ * Class Sessions
  * 
- **/
-
-namespace Nimter\Core\helpers;
-
-class sessions
+ * Clase para mantener las sesiones del navegador
+ */
+class Sessions
 {
    /**
     * Function session_init
@@ -21,16 +29,17 @@ class sessions
     *
     * @return void
     **/
-   public static function session_init()
+   public static function sessionInit()
    {
-      if ( session_id() == '' ) 
+      if ( session_id() === '' ) 
       {
-         global $config;
+         //Carga la configuración
+         $config = config::config();
 
          //Nombre de la session
          session_name($config['session']['name']);
 
-         //Establece la duracion de las cookies e inicializa las sesiones del navegador
+         //Establece la duracion de las cookies y la sesión, e inicializa la sesión en el navegador
          session_set_cookie_params($config['session']['lifetime']);
          ini_set('session.gc_maxlifetime', $config['session']['lifetime']);
          session_start(['cookie_lifetime' => $config['session']['lifetime'], ]);
