@@ -1,22 +1,27 @@
 <?php 
 /**
- * Class conn2db
- * 
- * Clase para conectarse a base de datos através de PDO
+ * Este archivo forma parte del Framework Nimter.
+ *
+ * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
  *  
  * PHP versión 7.1.3
  *
- * @package Nimter Framework
- * @author Alexis Mora
+ * @package Nimter\Core\router
+ * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.2.0
- * 
- **/
+ */
 
-namespace Nimter\Core\helpers;
+namespace Nimter\Core\Helpers;
 
 use \PDO;
+use Nimter\Core\Init\ConfigReader as config;
 
-class conn2db
+/**
+ * Class Conn2db
+ * 
+ * Clase para conectarse a base de datos através de PDO
+ */
+class Conn2db
 {
     # @var, Driver de la base de datos
     protected $driver;
@@ -46,7 +51,8 @@ class conn2db
      **/
     public function __construct()
     {
-        global $config;
+        //Carga la configuracion del framework
+		$config = config::config();
 
         $this->driver   = $config['database']['driver'];
         $this->host     = $config['database']['host'];
@@ -64,26 +70,23 @@ class conn2db
      * 
      * Configura la conexión a la base de datos.
      **/
-	protected function connection() 
-	{
-		try 
-        {
-            $connector = $this->driver.'::host='.$this->host.';dbname='.$this->DBname;
+    protected function connection()
+    {
+        try {
+            $connector = $this->driver . '::host=' . $this->host . ';dbname=' . $this->DBname;
 
             $attributes = array(
                 PDO::ATTR_PERSISTENT => false,
-                PDO::ATTR_EMULATE_PREPARES => false, 
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, 
-                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES '".$this->DBCodification."'"
+                PDO::ATTR_EMULATE_PREPARES => false,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES '" . $this->DBCodification . "'"
             );
-        
-            $this->pdo = new PDO( $connector,$this->DBuser,$this->DBpwd,$attributes );
+
+            $this->pdo = new PDO($connector, $this->DBuser, $this->DBpwd, $attributes);
 
             $this->connection = true;
-        } 
-        catch( PDOException $e ) 
-        {
-            echo __LINE__.$e->getMessage();
+        } catch (PDOException $e) {
+            echo __LINE__ . $e->getMessage();
         }
     }
 
@@ -96,51 +99,40 @@ class conn2db
      * @param array $params
      * @return void
      **/
-    private function prepareSQL( $sql, $params = "" )
+    private function prepareSQL($sql, $params = "")
     {
         try {
-            if ( $this->connection == true ) 
-            {
+            if ($this->connection === true) {
                 $this->connection();
             }
-            
+
             $this->stmt = $this->pdo->prepare($sql);
 
             //Agrega los parametros al arreglo de parametros  
             $this->addParams($params);
-                
+
             //Asigna los parametros y el tipo de parametro
-            if (!empty($this->params)) 
-            {
-                foreach ($this->params as $param => $value) 
-                {
-                    if(is_int($value[1])) 
-                    {
+            if (!empty($this->params)) {
+                foreach ($this->params as $param => $value) {
+                    if (is_int($value[1])) {
                         $type = PDO::PARAM_INT;
-                    } 
-                    else if( is_bool($value[1]) ) 
-                    {
+                    } else if (is_bool($value[1])) {
                         $type = PDO::PARAM_BOOL;
-                    } 
-                    else if( is_null($value[1]) ) 
-                    {
+                    } else if (is_null($value[1])) {
                         $type = PDO::PARAM_NULL;
-                    } 
-                    else 
-                    {
+                    } else {
                         $type = PDO::PARAM_STR;
                     }
+
                     $this->stmt->bindParam($value[0], $value[1], $type);
                 }
             }
             # Ejecuta la consulta SQL 
             $this->stmt->execute();
+        } catch (PDOException $e) {
+            echo __LINE__ . $e->getMessage();
         }
-        catch ( PDOException $e ) 
-        {
-            echo __LINE__.$e->getMessage();
-        }
-        
+
         $this->params = array(); //Reinicia el arreglo
     }
 
@@ -153,9 +145,9 @@ class conn2db
      * @param string $value
      * @return void
      **/
-    public function binder( $param, $value )
+    public function binder($param, $value)
     {
-        $this->params[sizeof($this->params)] = [":" . $param , $value];
+        $this->params[sizeof($this->params)] = [":" . $param, $value];
     }
 
     /** 
@@ -164,13 +156,11 @@ class conn2db
      * @param array $params_array
      * @return void 
      **/
-    private function addParams( $params_array )
+    private function addParams($params_array)
     {
-        if ( empty($this->params) && is_array($params_array) ) 
-        {
+        if (empty($this->params) && is_array($params_array)) {
             $keys = array_keys($params_array);
-            foreach ( $keys as $x => &$key ) 
-            {
+            foreach ($keys as $x => &$key) {
                 $this->binder($key, $params_array[$key]);
             }
         }
@@ -186,28 +176,23 @@ class conn2db
      * @param string $fetchmode
      * @return void 
      **/
-    public function query( $sql, $params = null, $fetchmode = PDO::FETCH_ASSOC )
+    public function query($sql, $params = null, $fetchmode = PDO::FETCH_ASSOC)
     {
         $sql = trim(str_replace("\r", " ", $sql));
-        
+
         $this->prepareSQL($sql, $params);
-        
+
         $rawStmt = explode(" ", preg_replace("/\s+|\t+|\n+/", " ", $sql));
-        
+
         //Determina el tipo de consulta y entrega el resultado adecuado dependiendo de la consulta 
         $cleanStmt = strtolower($rawStmt[0]);
-        
-        if ( $cleanStmt === 'select' || $cleanStmt === 'show' ) 
-        {
+
+        if ($cleanStmt === 'select' || $cleanStmt === 'show') {
             return $this->stmt->fetchAll($fetchmode);
-        } 
-        elseif ( $cleanStmt === 'insert' || $cleanStmt === 'update' || $cleanStmt === 'delete' ) 
-        {
+        } elseif ($cleanStmt === 'insert' || $cleanStmt === 'update' || $cleanStmt === 'delete') {
             return $this->stmt->rowCount();
-        } 
-        else 
-        {
-            return NULL;
+        } else {
+            return null;
         }
     }
 
@@ -233,4 +218,4 @@ class conn2db
         $this->pdo = null;
     }
 }
-?>
+ 
