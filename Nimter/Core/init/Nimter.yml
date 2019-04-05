@@ -23,7 +23,6 @@ security:
 #Configuracón de las rutas
 path:
   models: App/Models/
-  namespace_models: App\Models\\
   views: App/Views/
   controllers: App/Controllers/
   namespace_controllers: "App\\Controllers\\"
@@ -44,6 +43,11 @@ twig:
 session:
   name: nimter
   lifetime: 7200
+
+#Información del Framework
+nimter:
+  version: 1.2.0
+
 
 #Datos del desarrollador
 developer:
