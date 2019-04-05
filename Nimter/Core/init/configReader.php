@@ -1,20 +1,26 @@
 <?php
 /**
- * Lee la configuración del framework
- *    
+ * Este archivo forma parte del Framework Nimter.
+ *
+ * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
+ *  
  * PHP versión 7.1.3
  *
- * @package Nimter Framework
- * @author Alexis Mora
+ * @package Nimter\Core\router
+ * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.2.0
- * 
- **/
+ */
 
-namespace Nimter\Core\init;
+namespace Nimter\Core\Init;
 
 use Symfony\Component\Yaml\Yaml;
 
-class configReader
+/**
+ * Class configReader
+ * 
+ * Clase para leer la configuración del framework en YAML
+ */
+class ConfigReader
 {
     /**
      * Function config
@@ -30,4 +36,4 @@ class configReader
         return $config;
     }
 }
-?>
+ 
