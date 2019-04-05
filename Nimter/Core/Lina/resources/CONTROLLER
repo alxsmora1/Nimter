@@ -1,0 +1,39 @@
+<?php
+/**
+ *  Controlador [controllerName]
+ *  
+ *  PHP versión 7.1.3
+ *
+ *  @package Controllers
+ *  @author [authorName]
+ *           
+ */
+
+namespace App\Controllers;
+
+use Nimter\Core\controllers\controllers;
+
+/**
+ * class [controllerName]
+ * 
+ * Descripción...
+ */
+class [controllerName]Controller
+{
+    /**
+     * Function index
+     *
+     * Función index para el controlador [controllerName]
+     **/
+    public function index()
+    {	
+        //Parametros pasados a la vista
+        $params = array(
+            'controllerName' => '[controllerName]Controller',
+            'controllerPath' => '[controllerPath]',
+        );
+        
+        controllers::render('[directoryName]/index.twig', $params);
+    
+    }
+}
