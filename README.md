@@ -1,10 +1,10 @@
 # Nimter PHP MicroFramework
 
-![Version](https://img.shields.io/badge/version-1.2.0-orange.svg)   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![build](https://img.shields.io/badge/build-passing-green.svg)](https://bitbucket.org/alxsmora1/nimter/addon/pipelines/home#!/results/2) ![Version](https://img.shields.io/badge/version-1.2.0-orange.svg)   ![License](https://img.shields.io/badge/license-MIT-blue.svg) 
 
 ## Descripción del proyecto
 
-MicroFramework PHP modular de fácil aprendizaje y de configuración intuitiva. Cuenta con esquema de diseño MVC, es escalable y configurable. Se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta una clase para conexion a base de datos a través de PDO con soporte para Mysql/MariaDB y SQLite. Nimter está orientado para proyectos web pequeños y para todo aquel que desee iniciarse en el lenguaje PHP de una forma menos intensiva.
+MicroFramework PHP modular de fácil aprendizaje y de configuración intuitiva. Cuenta con esquema de diseño MVC, es escalable y configurable. Se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta con una clase para conexion a base de datos a través de PDO con soporte para Mysql/MariaDB y SQLite. Nimter está orientado para proyectos web pequeños y para todo aquel que desee iniciarse en el lenguaje PHP de una forma menos intensiva.
 
 ## Requerimientos
 
@@ -33,7 +33,7 @@ git clone https://github.com/alxsmora1/Nimter.git
 
 ### Instalación de las dependencias
 
-* Una vez finalizada la descarga del repositorio, dentro del directorio /Nimter/Core correr el siguiente comando por consola:
+* Una vez finalizada la descarga del repositorio, dentro del directorio Nimter/ correr el siguiente comando por consola:
 ```shell
 composer install
 ```
