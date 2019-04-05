@@ -1,10 +1,10 @@
 # Nimter PHP MicroFramework
 
-![Version](https://img.shields.io/badge/version-1.2.0-orange.svg)   ![License](https://img.shields.io/badge/license-MIT-blue.svg) 
+![Version](https://img.shields.io/badge/version-1.2.0-orange.svg)   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Descripción del proyecto
 
-MicroFramework PHP modular de facil aprendizaje y de configuración intuittiva. Cuenta con esquema de diseño MVC, es escalable y configurable. Se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta una clase para conexión a base de datos a través de PDO con soporte para Mysql/MariaDB y SQLite. Nimter está orientado para proyectos web pequeños y para todo aquel que desee inciarse en el lenguaje PHP de una forma menos intensiva.
+MicroFramework PHP modular de fácil aprendizaje y de configuración intuitiva. Cuenta con esquema de diseño MVC, es escalable y configurable. Se diferencia de otros Frameworks debido a la simpleza en el manejo de sus controladores. Cuenta una clase para conexion a base de datos a través de PDO con soporte para Mysql/MariaDB y SQLite. Nimter está orientado para proyectos web pequeños y para todo aquel que desee iniciarse en el lenguaje PHP de una forma menos intensiva.
 
 ## Requerimientos
 
@@ -14,33 +14,33 @@ MicroFramework PHP modular de facil aprendizaje y de configuración intuittiva. 
 
 ## Instalación Recomendada
 
-* En la consola correr el comando: 
-```shell 
-composer create-project "alxsmora/nimter:1.2.*" 
+* En la consola correr el comando:
+```shell
+composer create-project "alxsmora/nimter:1.2.* miProyecto"
 ```
 
 ## Otras formas de instalar
 
-* BitBucket: 
-```shell 
+* BitBucket:
+```shell
 git clone https://alxsmora1@bitbucket.org/alxsmora1/nimter.git
 ```
 
-* GitHub: 
-```shell 
+* GitHub:
+```shell
 git clone https://github.com/alxsmora1/Nimter.git
 ```
 
 ### Instalación de las dependencias
 
-* Una vez finalizada la descarga del repositorio, dentro del directorio /Nimter/Core correr el siguiente comando por consola: 
+* Una vez finalizada la descarga del repositorio, dentro del directorio /Nimter/Core correr el siguiente comando por consola:
 ```shell
 composer install
 ```
 
 ## Recomendaciones
 
-* Mantener el archivo .htaccess para poder usar el framework de manera correcta tanto en ambientes de desarrollo como en producción.
+* Mantener el archivo .htaccess para poder usar el framework de manera correcta tanto en ambientes de desarrollo como en producción que usen apache como lenguaje de servidor http.
 
 ## Dependencias
 
