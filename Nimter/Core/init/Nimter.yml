@@ -32,7 +32,7 @@ general:
   timezone: America/Mexico_City
   language: spanish
   path: 
-  debug: false
+  debug: true
 
 #Configuración de Twig
 twig:
