@@ -13,6 +13,8 @@
 
 namespace Nimter\Core\Helpers;
 
+use Nimter\Core\Init\ConfigReader AS config;
+
 /**
  * Class Hashtext
  * 
@@ -31,7 +33,7 @@ class Hashtext
      **/
 	public static function cipher($text)
 	{
-		global $config;
+		$config = config::config();
 
 		$sk = $config['security']['secret_key'];
 		$siv = $config['security']['secret_iv'];
@@ -56,7 +58,7 @@ class Hashtext
 	 **/
 	public static function decrypt($hash)
 	{
-		global $config;
+		$config = config::config();
 
 		$sk = $config['security']['secret_key'];
 		$siv = $config['security']['secret_iv'];
