@@ -27,8 +27,6 @@ class homeController
         //Carga la configuración
         $config = config::config();
 
-        dump($config);
-
         return controller::render('Home/index.twig', [
             'controllerName' => 'homeController',
             'controllerPath' => 'App/Controllers/homeController.php',
