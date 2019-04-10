@@ -13,6 +13,8 @@
 
 namespace Nimter\Core\Router;
 
+use Nimter\Core\Helpers\Sessions AS session;
+
 /**
  * Class router
  * 
@@ -90,6 +92,31 @@ class Router
             parse_str($params, $this->params);
             $this->routes[0] = $this->params;
             array_pop($this->routes);
+        }
+    }
+
+    /**
+     * Function auth
+     *
+     * Función para filtrar los permisos del controlador
+     *
+     * @param string $name - Nombre la de variable de session
+     * @param $result - Resultado de la variable de session
+     * @param string $location - localización url
+     * @return void
+     **/
+    public static function auth( string $name, $result, string $location = '')
+    {
+        if (empty($location)) {
+            $location = '/index';
+        }
+        
+        if (!empty(session::get($name))) {
+            if (session::get($name) === $result) {
+                $auth = true;
+            }
+        } else {
+            header('location: '.$location);
         }
     }
 }
