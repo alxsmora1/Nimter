@@ -63,9 +63,18 @@ class Utilities
 	 **/
 	public function help()
 	{
-		print_r("MVC Para generar un Modelo Vista Controlador debe de usar el siguiente comando: app:mvc Nombre_archivo. Tambien puede crear solo un tipo de archivo ej. app:m Nombre_archivo.\n");
-		print_r("--version Provee la versión del framework.\n");
-		print_r("--license Provee la licencia del framework.\n");
+		print_r("\e[0;34mAYUDA DE LINA CLI\e[m
+		\nUso: cli [--help] [--clearCache] [--webserver] [--version] [--license] [app: | mvc]
+		\n\e[0;32mUTILIDADES\e[m
+		\n--help 		Muestra la ayuda del framework.
+		\n--clearCache 	Limpia la cache de Twig.
+		\n--webserver	Hace uso del servidor integrado de php 
+		\n--versión 	Muestra la versión del Framework y del generador de archivos
+		\n--license 	Provee la licencia del framework
+		\n\e[0;32mGENERADOR DE CODIGO\e[m
+		\napp:mvc		Genera el Modelo, la Vista y el Controlador. Ejemplo app:mvc Nombre_archivo.
+		Tambien puede crear solo un tipo de archivo por ejemplo un modelo app:m Nombre_archivo.
+		");
 	}
 
 	/**
