@@ -6,6 +6,9 @@
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: 16px;
 	}
+	.content {
+		text-align: left;
+	}
 </style>
 {% endblock %}
 
@@ -13,7 +16,7 @@
 	<div class="content">
 		<h1> {{ controllerName }}</h1>
 		<p><strong>Bienvenido a Nimter Framework en su versión:</strong> {{ version }}<br>
-		Ruta del controlador: <code>{{ controllerPath }}</code></p>
+		<strong>Ruta del controlador:</strong> <code>{{ controllerPath }}</code></p>
 		<p><strong>¿Necesitas ayuda?</strong> <a href="https://bitbucket.org/alxsmora1/nimter/wiki/Home" target="_blank">Prueba a leer la documentación</a></p>
 	</div>
 {% endblock %}
