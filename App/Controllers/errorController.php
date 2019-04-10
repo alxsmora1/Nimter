@@ -19,13 +19,9 @@ class errorController
      **/
     public function index()
     {
-        //Parametros pasados a la vista
-        $params = array(
+        return controllers::render('Error/index.twig', [
             'controllerName' => 'errorController',
-            'controllerPath' => 'App/Controllers/errorController.php',
-        );
-
-        echo controllers::render('Error/index.twig', $params);
+            'controllerPath' => 'App/Controllers/errorController.php'
+        ]);
     }
 }
- 
