@@ -6,7 +6,8 @@
 php_errors.log
 
 #Nimter Cache
-Nimter/Core/cache/twig
+Nimter/Core/Cache/twig
+Nimter/Core/Cache/*
 
 ###> Composer packages
 Nimter/vendor/
