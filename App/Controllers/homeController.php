@@ -8,9 +8,9 @@
 
 namespace App\Controllers;
 
-use Nimter\Core\controllers\controllers as controller;
-use Nimter\Core\init\configReader as config;
-use Nimter\Core\Router\Router as router;
+use Nimter\Core\Controllers\Controllers as controller;
+use Nimter\Core\Init\ConfigReader as config;
+use Nimter\Core\Router\Router;
 
 class homeController
 {
@@ -22,7 +22,7 @@ class homeController
     public function index()
     {
         //Autenticación
-        //router::auth('user_is_logged_in', true);
+        //Router::auth(['user_is_logged_in' => true]);
 
         //Carga la configuración
         $config = config::config();

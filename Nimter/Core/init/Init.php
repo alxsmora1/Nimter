@@ -42,4 +42,4 @@ date_default_timezone_set($config['general']['timezone']);
 setlocale(LC_TIME, $config['general']['language']);
 
 //Manejo de los controladores
-(new controllers)->start();
+(new Controllers)->start();

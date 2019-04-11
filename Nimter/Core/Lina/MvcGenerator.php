@@ -14,7 +14,7 @@
 namespace Nimter\Core\Lina;
 
 use Nimter\Core\Init\ConfigReader as config;
-use Nimter\Core\helpers\Files as file;
+use Nimter\Core\Helpers\Files as file;
 
 /**
  * class MvcGenerator
