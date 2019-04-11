@@ -100,23 +100,26 @@ class Router
      *
      * Función para filtrar los permisos del controlador
      *
-     * @param string $name - Nombre la de variable de session
-     * @param $result - Resultado de la variable de session
+     * @param array $data - Nombre la de variable de session y resultado de la variable de session
      * @param string $location - localización url
      * @return void
      **/
-    public static function auth( string $name, $result, string $location = '')
+    public static function auth(string $location = '', array $permisos)
     {
         if (empty($location)) {
             $location = '/index';
         }
-        
-        if (!empty(session::get($name))) {
-            if (session::get($name) === $result) {
-                $auth = true;
+
+        $keys = array_keys($permisos);
+
+        foreach ($keys as $x => &$key) {
+            if (!empty(session::get($key))) {
+                if (session::get($key) === $permisos[$key]) {
+                    $auth = true;
+                }
+            } else {
+                header('location: '.$location);
             }
-        } else {
-            header('location: '.$location);
         }
     }
 }
