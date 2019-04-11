@@ -1,0 +1,7 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<h1>{{ controllerName }}</h1>
+	<p>¡Felicidades su controlador se ha generado con exito!<br> 
+		Ruta del controlador: <code>{{ controllerPath }}</code></p>
+{% endblock %}

@@ -1,19 +1,36 @@
 <?php
 /**
-*  Controlador home
-*  
-*  PHP versión 7.0
-*
-*  @package Controllers
-*  @author 
-*           
-*/
+ *  Controlador home
+ *  
+ *  @package Controllers
+ *  @author 
+ **/
 
-use App\Models\home;
+namespace App\Controllers;
 
-$home = new home();
+use Nimter\Core\Controllers\Controllers as controller;
+use Nimter\Core\Init\ConfigReader as config;
+use Nimter\Core\Router\Router;
 
-echo $twig->render('home.twig', array(
-	'Titulo' => $home->bienvenida(),
-	));
- ?>
+class homeController
+{
+    /**
+     * Function index
+     *
+     * Función index para el controlador home
+     **/
+    public function index()
+    {
+        //Autenticación
+        //Router::auth(['user_is_logged_in' => true]);
+
+        //Carga la configuración
+        $config = config::config();
+
+        return controller::render('Home/index.twig', [
+            'controllerName' => 'homeController',
+            'controllerPath' => 'App/Controllers/homeController.php',
+            'version' => $config['nimter']['version']
+        ]);
+    }
+}

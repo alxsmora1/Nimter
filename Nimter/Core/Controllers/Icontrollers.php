@@ -1,4 +1,3 @@
-#!/usr/bin/env php
 <?php
 /**
  * Este archivo forma parte del Framework Nimter.
@@ -12,10 +11,16 @@
  * @version 1.2.0
  */
 
-require_once('Nimter/autoload.php');
-require_once('Nimter/vendor/autoload.php');
+namespace Nimter\Core\Controllers;
 
-use Nimter\Core\lina\lina;
-
-$lina = new lina($argv);
-?> 
+/**
+ * Class Icontrollers
+ * 
+ * Interfaz de la clase Controlllers
+ */
+interface Icontrollers
+{
+    public function __construct();
+    public function start();
+    public function render(string $view, array $params = array());
+}

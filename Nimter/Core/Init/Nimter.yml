@@ -1,0 +1,56 @@
+##############################################
+#         Archivo de Configuración           #
+#         Nimter Framework 1.2.0             #
+##############################################
+
+#Configuración de la base de datos local
+database:
+  driver: mysql
+  host: localhost
+  name: 
+  user: 
+  pwd: 
+  port: 3306
+  codification: utf8
+  locale: es_MX
+
+#Configuración del cifrado para contraseñas y archivos
+security:
+  secret_key: Nimter$1.2.0
+  secret_iv:  Nimter$2019
+  method: AES-256-CBC
+
+#Configuracón de las rutas
+path:
+  models: App/Models/
+  views: App/Views/
+  controllers: App/Controllers/
+  namespace_controllers: "App\\Controllers\\"
+
+#Configuración general operativa del Framework
+general:
+  timezone: America/Mexico_City
+  language: spanish
+  path: 
+  debug: true
+
+#Configuración de Twig
+twig:
+  cache: Nimter/Core/cache/twig/
+  reload: true
+
+#sessions
+session:
+  name: nimter
+  lifetime: 7200
+
+#Información del Framework
+nimter:
+  version: 1.2.0
+
+
+#Datos del desarrollador
+developer:
+  author: Alexis Mora
+  company: Nimter
+  email:  alexis.mora@correo.com
