@@ -11,7 +11,8 @@
 
 namespace App\Controllers;
 
-use Nimter\Core\controllers\controllers;
+use Nimter\Core\Controllers\Controllers;
+use Nimter\Core\Router\Router;
 
 /**
  * class [controllerName]
@@ -27,13 +28,13 @@ class [controllerName]Controller
      **/
     public function index()
     {	
-        //Parametros pasados a la vista
-        $params = array(
+        //Autenticación
+        //Router::auth(['user_is_logged_in' => true]);
+
+        return controllers::render('[directoryName]/index.twig', [
             'controllerName' => '[controllerName]Controller',
             'controllerPath' => '[controllerPath]',
-        );
-        
-        controllers::render('[directoryName]/index.twig', $params);
+        ]);
     
     }
 }
