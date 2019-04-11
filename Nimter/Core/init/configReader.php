@@ -32,7 +32,7 @@ class ConfigReader
     public static function config()
     {
         //Obtenemos la configuración de Nimter
-        $config = Yaml::parse(file_get_contents(__PATH__ . 'Nimter\Core\init\Nimter.yml'));
+        $config = Yaml::parse(file_get_contents('Nimter\Core\init\Nimter.yml'));
         return $config;
     }
 }
