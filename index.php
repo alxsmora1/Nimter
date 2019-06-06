@@ -15,4 +15,4 @@
 define('__PATH__', '');
 
 //Carga el framework
-require_once __PATH__ . 'Nimter/Core/init/Init.php';
+require_once __PATH__ . 'Nimter/Core/Init/Init.php';
