@@ -73,7 +73,7 @@ class Conn2db
     protected function connection()
     {
         try {
-            $connector = $this->driver . '::host=' . $this->host . ';dbname=' . $this->DBname;
+            $connector = $this->driver . ':host=' . $this->host . ';dbname=' . $this->DBname;
 
             $attributes = array(
                 PDO::ATTR_PERSISTENT => false,
