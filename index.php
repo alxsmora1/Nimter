@@ -1,9 +1,9 @@
-<?php 
+<?php
 /**
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
  * @package Nimter\Core\controllers
@@ -11,8 +11,5 @@
  * @version 1.2.0
  */
 
-//Define la ruta por defecto del framework
-define('__PATH__', '');
-
 //Carga el framework
-require_once __PATH__ . 'Nimter/Core/Init/Init.php';
+require_once 'Nimter/Core/Init/Init.php';
