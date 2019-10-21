@@ -6,9 +6,9 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\router
+ * @package Nimter\Core\Routing
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
 namespace Nimter\Core\Routing;
@@ -49,6 +49,22 @@ class Router
     {
         $this->base_url = $this->getCurrentUri();
         $this->routes = array_filter(explode('/', $this->base_url));
+
+        $this->getParams();
+        return $this->routes;
+    }
+
+    /**
+     * Function getUrl
+     *
+     * Obtiene la ruta completa de la url sin los parametros GET
+     *
+     * @return string - la dirección url actual
+     **/
+    public function getUrl()
+    {
+        $this->base_url = $this->getCurrentUri();
+        $this->routes = $this->base_url;
 
         $this->getParams();
         return $this->routes;
