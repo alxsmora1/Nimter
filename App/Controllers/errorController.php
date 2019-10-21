@@ -1,9 +1,9 @@
 <?php
 /**
  *  Controlador error
- *  
+ *
  *  @package Controllers
- *  @author 
+ *  @author
  **/
 
 namespace App\Controllers;
@@ -17,9 +17,9 @@ class errorController
      *
      * Función index para el controlador de errores
      **/
-    public function index()
+    public function error404()
     {
-        return controllers::render('Error/index.twig', [
+        return controllers::render('Error/404.twig', [
             'controllerName' => 'errorController',
             'controllerPath' => 'App/Controllers/errorController.php'
         ]);
