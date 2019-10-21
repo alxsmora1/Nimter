@@ -1,22 +1,22 @@
 <?php
 /**
  *  Controlador [controllerName]
- *  
+ *
  *  PHP versión 7.1.3
  *
  *  @package Controllers
  *  @author [authorName]
- *           
+ *
  */
 
 namespace App\Controllers;
 
 use Nimter\Core\Controllers\Controllers;
-use Nimter\Core\Router\Router;
+use Nimter\Core\Routing\Router;
 
 /**
  * class [controllerName]
- * 
+ *
  * Descripción...
  */
 class [controllerName]Controller
@@ -27,7 +27,7 @@ class [controllerName]Controller
      * Función index para el controlador [controllerName]
      **/
     public function index()
-    {	
+    {
         //Autenticación
         //Router::auth(['user_is_logged_in' => true]);
 
@@ -35,6 +35,5 @@ class [controllerName]Controller
             'controllerName' => '[controllerName]Controller',
             'controllerPath' => '[controllerPath]',
         ]);
-    
     }
 }
