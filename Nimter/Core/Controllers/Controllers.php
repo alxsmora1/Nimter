@@ -3,23 +3,23 @@
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\controllers
+ * @package Nimter\Core\Controllers
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
 namespace Nimter\Core\Controllers;
 
-use Nimter\Core\Router\Router;
 use Nimter\Core\Init\ConfigReader AS config;
 use Nimter\Core\Helpers\Sessions as session;
+use Nimter\Core\Routing\UrlDispatcher;
 
 /**
  * Class Controllers
- * 
+ *
  * Clase que se encarga de manejar los controladores del framework.
  */
 class Controllers
@@ -32,7 +32,7 @@ class Controllers
     protected $params = [];
 
     /**
-     * Function controllersx
+     * Function __construct
      *
      * Función del contrutor que se encarga de toda la logica tras la carga de los controladores
      *
@@ -42,58 +42,51 @@ class Controllers
     {
         session::sessionInit();
 
-        //Carga la configuracion del framework
-		$config = config::config();
-
-        //Obtenemos la url
-        $url = (new router)->getRoutes();
+        //Obtenemos la data de las rutas
+        $routing = (new UrlDispatcher())->UrlMatcher();
 
         //Condición que comprueba que la url del controlador no este vacia.
-        //De lo contrario nos reenvia el controaldor Home por defecto.
-        if (empty($url[1])) {
-            $url[1] = 'home';
+        //De lo contrario nos reenvía el controlador Home por defecto.
+        if (empty($routing['controller'])) {
+            $this->error404();
         }
 
         //Se comprueba que exista el controlador en la ubicación designada los controladores
-        if (file_exists($config['path']['controllers'] . $url[1] . "Controller.php")) {
+        if (file_exists($routing['path'] . ".php")) {
             //Nombre del archivo que se va a cargar
-            $this->controller = $url[1] . "Controller";
-
-            unset($url[1]);
+            $this->controller = $routing['controller'];
         } else {
             $this->error404();
         }
 
         //Obtenemos la clase con su espacio de nombres
-        $fullClass = $config['path']['namespace_controllers'] . $this->controller;
+        $fullClass = $routing['namespace'];
 
         //Asociamos la instancia a $this->controller
         $this->controller = new $fullClass;
 
         //Comprobamos que el método exista en la clase a la que se accede
-        if (isset($url[2])) {
-            $this->method = $url[2];
+        if (isset($routing['method'])) {
+            $this->method = $routing['method'];
 
-            if (method_exists($this->controller, $url[2])) {
-                unset($url[2]);
-            } else {
+            if (false === method_exists($this->controller, $routing['method'])) {
                 $this->error404();
             }
         }
 
-        //Asociamos el resto de segmentos a $this->params, que serán los parametros pasados al arreglo
-        $this->params = $url ? array_values($url) : [];
+        //Asociamos $routing['params'] a $this->params, que serán los parametros pasados al arreglo
+        $this->params = $routing['params'] ? array_values($routing['params']) : [];
     }
 
     /**
      * Function start
      *
-     * Función que carga la clase, el metodo y los parametros. 
+     * Función que carga la clase, el metodo y los parametros.
      * Uso para cargar un controlador en base a la respuesta del router.
      *
      * @return void
      **/
-    public function start()
+    public function execute()
     {
         call_user_func_array([$this->controller, $this->method], $this->params);
     }
@@ -148,15 +141,15 @@ class Controllers
             //Asociamos la instancia al objeto
             $this->controller = new $fullClass;
 
-            call_user_func_array([$this->controller, 'index'], $this->params);
+            call_user_func_array([$this->controller, 'error404'], $this->params);
             exit;
         } else {
             echo "
             <center>
-            <h1>Error 404</h1>
-            <hr>
-            <h3>El controlador que busca no existe o no se ha encontrado en la ruta especificada: <code>" . $config['path']['controllers'] . "</code></h3>
-            <p>Verifique que los archivos no hayan sido movidos de lugar o que cuente con ellos, incluido el controlador de error 404.</p>
+                <h1>Error 404</h1>
+                <hr>
+                <h3>El controlador que busca no existe o no se ha encontrado en la ruta especificada: <code>" . $config['path']['controllers'] . "</code></h3>
+                <p>Verifique que los archivos no hayan sido movidos de lugar o que cuente con ellos, incluido el controlador de error 404.</p>
             </center>
             ";
             exit;
