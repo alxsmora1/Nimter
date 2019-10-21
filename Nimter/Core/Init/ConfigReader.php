@@ -3,12 +3,12 @@
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\router
+ * @package Nimter\Core\Init
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
 namespace Nimter\Core\Init;
@@ -16,8 +16,8 @@ namespace Nimter\Core\Init;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Class configReader
- * 
+ * Class ConfigReader
+ *
  * Clase para leer la configuración del framework en YAML
  */
 class ConfigReader
@@ -32,7 +32,7 @@ class ConfigReader
     public static function config()
     {
         //Obtenemos la configuración de Nimter
-        $config = Yaml::parse(file_get_contents('Nimter/Core/init/Nimter.yml'));
+        $config = Yaml::parse(file_get_contents('Nimter/Core/init/Nimter.yaml'));
         return $config;
     }
 }
