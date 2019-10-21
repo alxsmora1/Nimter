@@ -3,7 +3,7 @@
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
  * @package Nimter\Core\router
@@ -11,13 +11,13 @@
  * @version 1.2.0
  */
 
-namespace Nimter\Core\Router;
+namespace Nimter\Core\Routing;
 
 use Nimter\Core\Helpers\Sessions AS session;
 
 /**
  * Class router
- * 
+ *
  * Clase que se encarga de manejar las URL's
  **/
 class Router
@@ -30,7 +30,7 @@ class Router
 
     /**
      * Function __construct
-     * 
+     *
      * Carga la los datos completos de la url y sus secciones
      **/
     function __construct($get_params = false)
@@ -40,8 +40,8 @@ class Router
 
     /**
      * Function getRoutes
-     * 
-     * Obtiene la ruta completa de la url 
+     *
+     * Obtiene la ruta completa de la url
      *
      * @return array - arreglo con la dirección base de la url dividida por slashes
      **/
@@ -56,7 +56,7 @@ class Router
 
     /**
      * Function getCurrentUrl
-     * 
+     *
      * Obtiene la url actual
      *
      * @return array - arreglo con la dirección url
@@ -80,7 +80,7 @@ class Router
 
     /**
      * Function getParams
-     * 
+     *
      * Verfica si existe una query string con parametros GET sobre la url
      **/
     private function getParams()
@@ -123,4 +123,3 @@ class Router
         }
     }
 }
- 
