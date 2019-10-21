@@ -1,0 +1,15 @@
+#Lista de URL's
+
+#Controller Home
+home:
+  path: /home
+  controller: App/Controllers/homeController::index
+
+void:
+  path: /
+  controller: App/Controllers/homeController::index
+
+#Controller Errors
+errors:
+  path: /404
+  controller: App/Controllers/errorController::error404
