@@ -3,12 +3,12 @@
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\router
+ * @package Nimter\Core\Init
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
 use Symfony\Component\Debug\Debug;
@@ -23,23 +23,23 @@ if (version_compare(phpversion(), '7.1.3', '<')) {
 }
 
 //Carga los modulos y paquetes del framework
-require_once __PATH__ . 'Nimter/autoload.php';
-require_once __PATH__ . 'Nimter/vendor/autoload.php';
+require_once 'Nimter/autoload.php';
+require_once 'Nimter/vendor/autoload.php';
 
 //Carga la configuracion del framework
 $config = config::config();
 
-//Se estable el modo debug ha sido definido previamente
+//Se estable el modo debug si ha sido definido previamente
 if ($config['general']['debug'] === true) {
-    //Manejador de errores Symfony/DebuPg
+    //Manejador de errores Symfony/Debug
     ErrorHandler::register();
     ExceptionHandler::register();
     Debug::enable();
 }
 
-//Configuración de la region y zona horaria
+//Configuración de la región y zona horaria
 date_default_timezone_set($config['general']['timezone']);
 setlocale(LC_TIME, $config['general']['language']);
 
 //Manejo de los controladores
-(new Controllers)->start();
+(new Controllers())->execute();
