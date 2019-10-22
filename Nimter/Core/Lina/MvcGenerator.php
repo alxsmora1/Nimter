@@ -3,44 +3,45 @@
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\lina
+ * @package Nimter\Core\Lina
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
 namespace Nimter\Core\Lina;
 
-use Nimter\Core\Init\ConfigReader as config;
-use Nimter\Core\Helpers\Files as file;
+use Nimter\Core\Init\ConfigReader;
+use Nimter\Core\Helpers\Files;
 
 /**
  * class MvcGenerator
- * 
+ *
  * Clase que se encarga de generar y manipular los archivos MVC
  */
 class MvcGenerator
 {
-	/** 
+	/**
      * Function createModel
-     * 
+     *
      * Crea el modelo en la ruta asignada a los modelos desde el archivo de configuración
-     * 
+     *
      * @param string $name - Nombre del Modelo
+	 * @return void
      **/
 	public static function createModel(string $name)
 	{
 		//Carga la configuracion del framework
-		$config = config::config();
+		$config = ConfigReader::config();
 
 		//URL del template de controladores
 		$urlTemplate = 'Nimter/Core/lina/resources/model';
 
 		$model = file_get_contents($urlTemplate);
 
-		//Modifica el contenido del template del modelo 
+		//Modifica el contenido del template del modelo
 		$model = str_replace('[modelName]', $name, $model);
 		$model = str_replace('[authorName]', $config['developer']['author'], $model);
 
@@ -58,59 +59,63 @@ class MvcGenerator
 		}
 	}
 
-	/** 
+	/**
 	 * Function createView
-	 * 
+	 *
 	 * Crea la vista en la ruta asignada a los Views desde el archivo de configuración
-	 * 
+	 *
 	 * @param string $name - Nombre de la vista
+	 * @return void
 	 **/
 	public function createView(string $name)
 	{
 		//Carga la configuracion del framework
-		$config = config::config();
+		$config = ConfigReader::config();
 
 		//URL del template basico
 		$url = 'Nimter/Core/lina/resources/VIEW';
 
 		if (file_exists($url)) {
-				$template = file_get_contents($url);
+			$template = file_get_contents($url);
 
-				//Url del directorio de las vistas
-				$directory = $config['path']['views'] . ucfirst($name);
+			//Url del directorio de las vistas
+			$directory = $config['path']['views'] . ucfirst($name);
 
-				//Comprueba que exista el directorio, si no es así lo crea
-				if (!file_exists($directory)) {
-					mkdir($directory, 0777, true);
-				}
-
-				//Url del archivo
-				$url = $config['path']['views'] . ucfirst($name) . '/index.twig';
-
-				if (file_exists($url)) {
-						print_r("Este archivo ya existe eliminelo o intente con otro nombre\n");
-					} else {
-						$view = fopen($url, 'a');
-						if (fwrite($view, $template) !== FALSE) {
-							print_r("Se ha creado la Vista " . $name . ".twig en " . $config['path']['views'] . "\n");
-						} else {
-							print_r("Ha ocurrido un error al crear la vista\n");
-						}
-					}
-			} else {
-				print_r("El archivo base ha sido movido de su lugar o ha sido borrado.\n");
+			//Comprueba que exista el directorio, si no es así lo crea
+			if (!file_exists($directory)) {
+				mkdir($directory, 0777, true);
 			}
+
+			//Url del archivo
+			$url = $config['path']['views'] . ucfirst($name) . '/index.twig';
+
+			if (file_exists($url)) {
+				print_r("Este archivo ya existe eliminelo o intente con otro nombre\n");
+			} else {
+				$view = fopen($url, 'a');
+				if (fwrite($view, $template) !== FALSE) {
+					print_r("Se ha creado la Vista " . $name . ".twig en " . $config['path']['views'] . "\n");
+				} else {
+					print_r("Ha ocurrido un error al crear la vista\n");
+				}
+			}
+		} else {
+			print_r("El archivo base ha sido movido de su lugar o ha sido borrado.\n");
+		}
 	}
 
-	/** 
-	 * Function createModel
-	 * Crea el controlador en la ruta asignada a los controladores desde el archivo de configuración 
+	/**
+	 * Function createController
+	 *
+	 * Crea el controlador en la ruta asignada a los controladores desde el archivo de configuración
+	 *
 	 * @param string $name Nombre del controlador
+	 * @return void
 	 **/
-	public function create_controller($name)
+	public function createController(string $name)
 	{
 		//Carga la configuracion del framework
-		$config = config::config();
+		$config = ConfigReader::config();
 
 		//Url del controlador a generar
 		$url = $config['path']['controllers'] . $name . 'Controller.php';
@@ -121,7 +126,7 @@ class MvcGenerator
 		//Obtine el contenido del template de controlador
 		$controller = file_get_contents($urlTemplate);
 
-		//Modifica el contenido del template de controlador 
+		//Modifica el contenido del template de controlador
 		$controller = str_replace('[controllerName]', $name, $controller);
 		$controller = str_replace('[directoryName]', ucfirst($name), $controller);
 		$controller = str_replace('[controllerPath]', $url, $controller);
@@ -143,13 +148,14 @@ class MvcGenerator
 	 * Function deleteMvc
 	 *
 	 * Función que elimina una serie de archivos MVC especificados
+	 *
 	 * @param $controller Nombre del los archivos vinculados al controlador
 	 * @return void
 	 **/
 	public static function deleteMvc(string $file)
 	{
 		//Carga la configuracion del framework
-		$config = config::config();
+		$config = ConfigReader::config();
 
 		//Busca el modelo y lo elimina
 		if (file_exists($config['path']['models'] . $file . ".php")) {
@@ -159,7 +165,7 @@ class MvcGenerator
 
 		//Busca la vista y la elimina
 		if (file_exists($config['path']['views'] . ucfirst($file) . "/")) {
-			file::removeFiles($config['path']['views'] . ucfirst($file) . "/");
+			Files::removeFiles($config['path']['views'] . ucfirst($file) . "/");
 			$view = "\nLas Vistas en: " . $config['path']['views'] . ucfirst($file) . "/";
 		}
 
