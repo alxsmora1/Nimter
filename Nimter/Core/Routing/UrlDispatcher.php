@@ -30,7 +30,7 @@ class UrlDispatcher
      *
      * @return array - $routing
      **/
-    public function UrlMatcher()
+    public function urlMatcher()
     {
         //Obtiene la configuración de las rutas
         $config = Yaml::parse(file_get_contents('urls.yaml'));
