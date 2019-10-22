@@ -13,16 +13,17 @@
 
 namespace Nimter\Core\Controllers;
 
-use Nimter\Core\Init\ConfigReader AS config;
-use Nimter\Core\Helpers\Sessions as session;
+use Nimter\Core\Controllers\IControllers;
 use Nimter\Core\Routing\UrlDispatcher;
+use Nimter\Core\Init\ConfigReader;
+use Nimter\Core\Helpers\Sessions;
 
 /**
  * Class Controllers
  *
  * Clase que se encarga de manejar los controladores del framework.
  */
-class Controllers
+class Controllers implements IControllers
 {
     /** @var string $_controller Variable que contiene la ruta del controlador y su nombre, home por defecto */
     protected $controller = "home";
@@ -40,7 +41,7 @@ class Controllers
      **/
     public function __construct()
     {
-        session::sessionInit();
+        Sessions::sessionInit();
 
         //Obtenemos la data de las rutas
         $routing = (new UrlDispatcher())->UrlMatcher();
@@ -103,7 +104,7 @@ class Controllers
     public static function render(string $view, array $params = array())
     {
         //Carga la configuracion del framework
-		$config = config::config();
+		$config = ConfigReader::config();
 
         if (!file_exists($config['twig']['cache'])) {
             mkdir($config['twig']['cache'], 0777, true);
@@ -131,7 +132,7 @@ class Controllers
     public function error404()
     {
         //Carga la configuracion del framework
-		$config = config::config();
+		$config = ConfigReader::config();
 
         //Control de errores cuando no encuentra el controlador o la pagina de error misma
         if (file_exists($config['path']['controllers'] . "errorController.php")) {
