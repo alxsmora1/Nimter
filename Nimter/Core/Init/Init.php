@@ -14,7 +14,6 @@
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
-use Nimter\Core\Init\ConfigReader as config;
 use Nimter\Core\Controllers\Controllers;
 
 //Versión Minima de PHP
@@ -27,10 +26,11 @@ require_once 'Nimter/autoload.php';
 require_once 'Nimter/vendor/autoload.php';
 
 //Carga la configuracion del framework
-$config = config::config();
+$dotenv = \Dotenv\Dotenv::create(__ROOT__);
+$dotenv->load();
 
 //Se estable el modo debug si ha sido definido previamente
-if ($config['general']['debug'] === true) {
+if (getenv('APP_DEBUG') === true) {
     //Manejador de errores Symfony/Debug
     ErrorHandler::register();
     ExceptionHandler::register();
@@ -38,8 +38,8 @@ if ($config['general']['debug'] === true) {
 }
 
 //Configuración de la región y zona horaria
-date_default_timezone_set($config['general']['timezone']);
-setlocale(LC_TIME, $config['general']['language']);
+date_default_timezone_set(getenv('APP_TIMEZONE'));
+setlocale(LC_TIME, getenv('APP_LANGUAGE'));
 
 //Manejo de los controladores
 (new Controllers())->execute();

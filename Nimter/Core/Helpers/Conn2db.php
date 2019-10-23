@@ -53,17 +53,15 @@ class Conn2db
      **/
     public function __construct()
     {
-        //Carga la configuracion del framework
-		$config = ConfigReader::config();
 
-        $this->DBdriver = $config['database']['driver'];
-        $this->DBhost   = $config['database']['host'];
-        $this->DBport   = $config['database']['port'];
-        $this->DBname   = $config['database']['name'];
-        $this->DBuser   = $config['database']['user'];
-        $this->DBpwd    = $config['database']['pwd'];
-        $this->DBCodification = $config['database']['codification'];
-        $this->DBLocale = $config['database']['locale'];
+        $this->DBdriver   = getenv('DB_DRIVER');
+        $this->DBhost     = getenv('DB_HOST');
+        $this->DBport   = getenv('DB_PORT');
+        $this->DBname   = getenv('DB_NAME');
+        $this->DBuser   = getenv('DB_USER');
+        $this->DBpwd    = getenv('DB_PWD');
+        $this->DBCodification    = getenv('DB_CODIFICATION');
+        $this->DBLocale = getenv('DB_LOCALE');
         $this->params   = array();
         $this->connection();
     }
