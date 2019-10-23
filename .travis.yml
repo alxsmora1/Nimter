@@ -1,0 +1,21 @@
+language: php
+
+sudo: false
+
+php:
+  - 7.1.3
+
+before_script:
+ - composer self-update
+ - composer install --prefer-source --no-interaction
+
+cache:
+ directories:
+   - $HOME/.composer/cache/files
+
+script:
+  - cd Nimter
+  - composer install
+  - composer require phpunit/phpunit
+  - cd ..
+  - phpunit
