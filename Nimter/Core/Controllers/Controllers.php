@@ -15,7 +15,6 @@ namespace Nimter\Core\Controllers;
 
 use Nimter\Core\Controllers\IControllers;
 use Nimter\Core\Routing\UrlDispatcher;
-use Nimter\Core\Init\ConfigReader;
 use Nimter\Core\Helpers\Sessions;
 
 /**
@@ -103,18 +102,15 @@ class Controllers implements IControllers
      **/
     public static function render(string $view, array $params = array())
     {
-        //Carga la configuracion del framework
-		$config = ConfigReader::config();
-
-        if (!file_exists($config['twig']['cache'])) {
-            mkdir($config['twig']['cache'], 0777, true);
+        if (!file_exists(getenv('TWIG_CACHE'))) {
+            mkdir(getenv('TWIG_CACHE'), 0777, true);
         }
 
         //Configuración para el motor de platillas Twig
-        $loader = new \Twig_Loader_Filesystem($config['path']['views']);
+        $loader = new \Twig_Loader_Filesystem(getenv('DEFAULT_VIEWS'));
         $twig = new \Twig_Environment($loader, array(
-            'cache' => $config['twig']['cache'],
-            'auto_reload' => $config['twig']['reload'],
+            'cache' => getenv('TWIG_CACHE'),
+            'auto_reload' => getenv('TWIG_RELOAD'),
         ));
 
         //Global Variables
@@ -131,13 +127,10 @@ class Controllers implements IControllers
      **/
     public function error404()
     {
-        //Carga la configuracion del framework
-		$config = ConfigReader::config();
-
         //Control de errores cuando no encuentra el controlador o la pagina de error misma
-        if (file_exists($config['path']['controllers'] . "errorController.php")) {
+        if (file_exists(getenv('DEFAULT_CONTROLLERS') . "errorController.php")) {
             //Obtenemos la clase con su espacio de nombres del controlador de error
-            $fullClass = $config['path']['namespace_controllers'] . 'errorController';
+            $fullClass = getenv('CONTROLLERS_NAMESPACE') . 'errorController';
 
             //Asociamos la instancia al objeto
             $this->controller = new $fullClass;
@@ -149,7 +142,7 @@ class Controllers implements IControllers
             <center>
                 <h1>Error 404</h1>
                 <hr>
-                <h3>El controlador que busca no existe o no se ha encontrado en la ruta especificada: <code>" . $config['path']['controllers'] . "</code></h3>
+                <h3>El controlador que busca no existe o no se ha encontrado en la ruta especificada: <code>" . getenv('DEFAULT_CONTROLLERS') . "</code></h3>
                 <p>Verifique que los archivos no hayan sido movidos de lugar o que cuente con ellos, incluido el controlador de error 404.</p>
             </center>
             ";

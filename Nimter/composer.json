@@ -5,6 +5,7 @@
     },
     "require": {
         "symfony/yaml": "^4.2",
-        "twig/twig": "2.0"
+        "twig/twig": "2.12.1",
+        "vlucas/phpdotenv": "^3.6"
     }
 }

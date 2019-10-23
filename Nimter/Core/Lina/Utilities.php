@@ -13,7 +13,6 @@
 
 namespace Nimter\Core\Lina;
 
-use Nimter\Core\Init\ConfigReader;
 use Nimter\Core\Helpers\Files;
 
 /**
@@ -32,10 +31,7 @@ class Utilities
 	 **/
 	public function clearCache()
 	{
-		//Carga la configuracion del framework
-		$config = ConfigReader::config();
-
-		Files::removeFiles($config['twig']['cache'] . "/");
+		Files::removeFiles(getenv('TWIG_CACHE'));
 
 		print_r("El cache de Twig fue borrado con exito.");
 	}

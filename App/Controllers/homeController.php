@@ -1,15 +1,14 @@
 <?php
 /**
  *  Controlador home
- *  
+ *
  *  @package Controllers
- *  @author 
+ *  @author
  **/
 
 namespace App\Controllers;
 
-use Nimter\Core\Controllers\Controllers as controller;
-use Nimter\Core\Init\ConfigReader as config;
+use Nimter\Core\Controllers\Controllers;
 use Nimter\Core\Router\Router;
 
 class homeController
@@ -24,13 +23,10 @@ class homeController
         //Autenticación
         //Router::auth(['user_is_logged_in' => true]);
 
-        //Carga la configuración
-        $config = config::config();
-
-        return controller::render('Home/index.twig', [
+        return Controllers::render('Home/index.twig', [
             'controllerName' => 'homeController',
             'controllerPath' => 'App/Controllers/homeController.php',
-            'version' => $config['nimter']['version']
+            'version' => getenv('APP_VERSION')
         ]);
     }
 }

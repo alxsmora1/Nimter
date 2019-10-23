@@ -13,7 +13,6 @@
 
 namespace Nimter\Core\Lina;
 
-use Nimter\Core\Init\ConfigReader;
 use Nimter\Core\Helpers\Files;
 
 /**
@@ -33,26 +32,23 @@ class MvcGenerator
      **/
 	public static function createModel(string $name)
 	{
-		//Carga la configuracion del framework
-		$config = ConfigReader::config();
-
 		//URL del template de controladores
-		$urlTemplate = 'Nimter/Core/lina/resources/model';
+		$urlTemplate = 'Nimter/Core/Lina/resources/MODEL';
 
 		$model = file_get_contents($urlTemplate);
 
 		//Modifica el contenido del template del modelo
 		$model = str_replace('[modelName]', $name, $model);
-		$model = str_replace('[authorName]', $config['developer']['author'], $model);
+		$model = str_replace('[authorName]', getenv('AUTHOR_NAME'), $model);
 
-		$url = $config['path']['models'] . $name . '.php';
+		$url = getenv('DEFAULT_MODELS') . $name . '.php';
 
 		if (file_exists($url)) {
 			print_r("Este archivo ya existe eliminelo o intente con otro nombre.\n");
 		} else {
 			$view = fopen($url, 'a');
 			if (fwrite($view, $model) !== FALSE) {
-				print_r("Se ha creado el modelo " . $name . ".php en " . $config['path']['models'] . "\n");
+				print_r("Se ha creado el modelo " . $name . ".php en " . getenv('DEFAULT_MODELS') . "\n");
 			} else {
 				print_r("Ha ocurrido un error al crear el Modelo, tenga en cuenta que se necesitan permisos de escritura para realizar esta operación.\n");
 			}
@@ -69,9 +65,6 @@ class MvcGenerator
 	 **/
 	public function createView(string $name)
 	{
-		//Carga la configuracion del framework
-		$config = ConfigReader::config();
-
 		//URL del template basico
 		$url = 'Nimter/Core/lina/resources/VIEW';
 
@@ -79,7 +72,7 @@ class MvcGenerator
 			$template = file_get_contents($url);
 
 			//Url del directorio de las vistas
-			$directory = $config['path']['views'] . ucfirst($name);
+			$directory = getenv('DEFAULT_VIEWS') . ucfirst($name);
 
 			//Comprueba que exista el directorio, si no es así lo crea
 			if (!file_exists($directory)) {
@@ -87,14 +80,14 @@ class MvcGenerator
 			}
 
 			//Url del archivo
-			$url = $config['path']['views'] . ucfirst($name) . '/index.twig';
+			$url = getenv('DEFAULT_VIEWS') . ucfirst($name) . '/index.twig';
 
 			if (file_exists($url)) {
 				print_r("Este archivo ya existe eliminelo o intente con otro nombre\n");
 			} else {
 				$view = fopen($url, 'a');
 				if (fwrite($view, $template) !== FALSE) {
-					print_r("Se ha creado la Vista " . $name . ".twig en " . $config['path']['views'] . "\n");
+					print_r("Se ha creado la Vista " . $name . ".twig en " . getenv('DEFAULT_VIEWS') . "\n");
 				} else {
 					print_r("Ha ocurrido un error al crear la vista\n");
 				}
@@ -114,14 +107,11 @@ class MvcGenerator
 	 **/
 	public function createController(string $name)
 	{
-		//Carga la configuracion del framework
-		$config = ConfigReader::config();
-
 		//Url del controlador a generar
-		$url = $config['path']['controllers'] . $name . 'Controller.php';
+		$url = getenv('DEFAULT_CONTROLLERS') . $name . 'Controller.php';
 
 		//URL del template de controladores
-		$urlTemplate = 'Nimter/Core/lina/resources/controller';
+		$urlTemplate = 'Nimter/Core/lina/resources/CONTROLLER';
 
 		//Obtine el contenido del template de controlador
 		$controller = file_get_contents($urlTemplate);
@@ -130,14 +120,14 @@ class MvcGenerator
 		$controller = str_replace('[controllerName]', $name, $controller);
 		$controller = str_replace('[directoryName]', ucfirst($name), $controller);
 		$controller = str_replace('[controllerPath]', $url, $controller);
-		$controller = str_replace('[authorName]', $config['developer']['author'], $controller);
+		$controller = str_replace('[authorName]', getenv('AUTHOR_NAME'), $controller);
 
 		if (file_exists($url)) {
 			print_r("Este archivo ya existe eliminelo o intente con otro nombre\n");
 		} else {
 			$view = fopen($url, 'a');
 			if (fwrite($view, $controller) !== FALSE) {
-				print_r("Se ha creado el Controlador " . $name . "Controller.php en " . $config['path']['controllers'] . "\n");
+				print_r("Se ha creado el Controlador " . $name . "Controller.php en " . getenv('DEFAULT_CONTROLLERS') . "\n");
 			} else {
 				print_r("Ha ocurrido un error al crear el controlador");
 			}
@@ -154,25 +144,22 @@ class MvcGenerator
 	 **/
 	public static function deleteMvc(string $file)
 	{
-		//Carga la configuracion del framework
-		$config = ConfigReader::config();
-
 		//Busca el modelo y lo elimina
-		if (file_exists($config['path']['models'] . $file . ".php")) {
-			unlink($config['path']['models'] . $file . ".php");
-			$model = "El modelo: " . $config['path']['models'] . $file . ".php";
+		if (file_exists(getenv('DEFAULT_MODELS') . $file . ".php")) {
+			unlink(getenv('DEFAULT_MODELS') . $file . ".php");
+			$model = "El modelo: " . getenv('DEFAULT_MODELS') . $file . ".php";
 		}
 
 		//Busca la vista y la elimina
-		if (file_exists($config['path']['views'] . ucfirst($file) . "/")) {
-			Files::removeFiles($config['path']['views'] . ucfirst($file) . "/");
-			$view = "\nLas Vistas en: " . $config['path']['views'] . ucfirst($file) . "/";
+		if (file_exists(getenv('DEFAULT_VIEWS') . ucfirst($file) . "/")) {
+			Files::removeFiles(getenv('DEFAULT_VIEWS') . ucfirst($file) . "/");
+			$view = "\nLas Vistas en: " . getenv('DEFAULT_VIEWS') . ucfirst($file) . "/";
 		}
 
 		//Busca el Controlador y lo elimina
-		if (file_exists($config['path']['controllers'] . $file . "Controller.php")) {
-			unlink($config['path']['controllers'] . $file . "Controller.php");
-			$controller = "\nEl controlador: " . $config['path']['controllers'] . $file . "Controller.php";
+		if (file_exists(getenv('DEFAULT_CONTROLLERS') . $file . "Controller.php")) {
+			unlink(getenv('DEFAULT_CONTROLLERS') . $file . "Controller.php");
+			$controller = "\nEl controlador: " . getenv('DEFAULT_CONTROLLERS') . $file . "Controller.php";
 		}
 		print_r("Lo siguientes archivos fueron eliminados con exito:" . "\n" . $model . $view . $controller . "\n");
 	}
