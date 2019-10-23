@@ -17,5 +17,4 @@ script:
   - cd Nimter
   - composer install
   - composer require phpunit/phpunit
-  - cd ..
-  - phpunit
+  - ./vendor/bin/phpunit
