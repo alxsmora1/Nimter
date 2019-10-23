@@ -6,10 +6,13 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\controllers
+ * @package
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
+//Constante con la dirección de la raiz del framework
+define('__ROOT__',__DIR__);
+
 //Carga el framework
-require_once 'Nimter/Core/Init/Init.php';
+require_once __ROOT__ . '/Nimter/Core/Init/Init.php';
