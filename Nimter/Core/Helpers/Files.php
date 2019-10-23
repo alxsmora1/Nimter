@@ -3,19 +3,19 @@
  * Este archivo forma parte del Framework Nimter.
  *
  * Para más información acerca de los derechos de autor y la licencia, ver el archivo LICENSE.
- *  
+ *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\controllers
+ * @package Nimter\Core\Helpers
  * @author Alexis Mora <alexis.mora1v@gmail.com>
- * @version 1.2.0
+ * @version 1.3.0
  */
 
 namespace Nimter\Core\Helpers;
 
 /**
  * class Files
- * 
+ *
  * Clase para manejar archivos y directorios
  */
 class Files
@@ -25,7 +25,7 @@ class Files
 	 *
 	 * Función que elimina los archivos de una carpeta.
 	 *
-	 * @param string $dir directorio del cual se eliminará todo su contenido 
+	 * @param string $dir directorio del cual se eliminará todo su contenido
 	 * @return void
 	 **/
 	public static function removeFiles(string $dir)
