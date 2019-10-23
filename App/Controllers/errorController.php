@@ -8,7 +8,7 @@
 
 namespace App\Controllers;
 
-use Nimter\Core\Controllers\Controllers;
+use Nimter\Controllers\Controllers;
 
 class errorController
 {

@@ -8,8 +8,8 @@
 
 namespace App\Controllers;
 
-use Nimter\Core\Controllers\Controllers;
-use Nimter\Core\Router\Router;
+use Nimter\Controllers\Controllers;
+use Nimter\Router\Router;
 
 class homeController
 {

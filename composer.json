@@ -1,6 +1,6 @@
 {
 	"config": {
-        "vendor-dir": "Core/vendor"
+        "vendor-dir": "src/vendor"
     },
 	"name": "alxsmora/nimter",
 	"type": "library",
@@ -20,10 +20,13 @@
 	"require-dev": {
 		"symfony/var-dumper": "^4.2",
 		"symfony/debug": "^4.2"
-    },
-	"autoload": {
-		"files": ["Extension.php"]
 	},
+    "autoload": {
+    	"psr-4": {
+    		"Nimter\\": "src/",
+    		"Tests\\": "tests/"
+    	}
+    },
 	"minimum-stability": "dev",
     "prefer-stable": true
 }

@@ -6,7 +6,7 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\Init
+ * @package Nimter\Init
  * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.3.0
  */
@@ -14,7 +14,7 @@
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
-use Nimter\Core\Controllers\Controllers;
+use Nimter\Controllers\Controllers;
 
 //Versión Minima de PHP
 if (version_compare(phpversion(), '7.1.3', '<')) {

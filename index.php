@@ -15,4 +15,4 @@
 define('__ROOT__',__DIR__);
 
 //Carga el framework
-require_once __ROOT__ . '/Nimter/Core/Init/Init.php';
+require_once __ROOT__ . '/Nimter/src/Init/Init.php';

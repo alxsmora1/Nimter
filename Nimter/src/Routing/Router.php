@@ -6,14 +6,14 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\Routing
+ * @package Nimter\Routing
  * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.3.0
  */
 
-namespace Nimter\Core\Routing;
+namespace Nimter\Routing;
 
-use Nimter\Core\Helpers\Sessions AS session;
+use Nimter\Helpers\Sessions AS session;
 
 /**
  * Class router

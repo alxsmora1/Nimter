@@ -6,16 +6,16 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\Controllers
+ * @package Nimter\Controllers
  * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.3.0
  */
 
-namespace Nimter\Core\Controllers;
+namespace Nimter\Controllers;
 
-use Nimter\Core\Controllers\IControllers;
-use Nimter\Core\Routing\UrlDispatcher;
-use Nimter\Core\Helpers\Sessions;
+use Nimter\Controllers\IControllers;
+use Nimter\Routing\UrlDispatcher;
+use Nimter\Helpers\Sessions;
 
 /**
  * Class Controllers

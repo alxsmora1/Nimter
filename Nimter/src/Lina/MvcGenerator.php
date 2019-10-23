@@ -6,14 +6,14 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\Lina
+ * @package Nimter\Lina
  * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.3.0
  */
 
-namespace Nimter\Core\Lina;
+namespace Nimter\Lina;
 
-use Nimter\Core\Helpers\Files;
+use Nimter\Helpers\Files;
 
 /**
  * class MvcGenerator
@@ -33,7 +33,7 @@ class MvcGenerator
 	public static function createModel(string $name)
 	{
 		//URL del template de controladores
-		$urlTemplate = 'Nimter/Core/Lina/resources/MODEL';
+		$urlTemplate = 'Nimter/src/Lina/resources/MODEL';
 
 		$model = file_get_contents($urlTemplate);
 
@@ -66,7 +66,7 @@ class MvcGenerator
 	public function createView(string $name)
 	{
 		//URL del template basico
-		$url = 'Nimter/Core/lina/resources/VIEW';
+		$url = 'Nimter/src/Lina/resources/VIEW';
 
 		if (file_exists($url)) {
 			$template = file_get_contents($url);
@@ -111,7 +111,7 @@ class MvcGenerator
 		$url = getenv('DEFAULT_CONTROLLERS') . $name . 'Controller.php';
 
 		//URL del template de controladores
-		$urlTemplate = 'Nimter/Core/lina/resources/CONTROLLER';
+		$urlTemplate = 'Nimter/src/Lina/resources/CONTROLLER';
 
 		//Obtine el contenido del template de controlador
 		$controller = file_get_contents($urlTemplate);
