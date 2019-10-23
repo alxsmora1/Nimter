@@ -6,12 +6,12 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\Helpers
+ * @package Nimter\Helpers
  * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.3.0
  */
 
-namespace Nimter\Core\Helpers;
+namespace Nimter\Helpers;
 
 /**
  * Class Sessions

@@ -6,15 +6,15 @@
  *
  * PHP versión 7.1.3
  *
- * @package Nimter\Core\Lina
+ * @package Nimter\Lina
  * @author Alexis Mora <alexis.mora1v@gmail.com>
  * @version 1.3.0
  */
 
-namespace Nimter\Core\Lina;
+namespace Nimter\Lina;
 
-use Nimter\Core\Lina\Utilities as util;
-use Nimter\Core\Lina\MvcGenerator as mvc;
+use Nimter\Lina\Utilities as util;
+use Nimter\Lina\MvcGenerator as mvc;
 
 /**
  * Class lina

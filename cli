@@ -18,6 +18,6 @@ require_once('Nimter/vendor/autoload.php');
 $dotenv = \Dotenv\Dotenv::create(__DIR__);
 $dotenv->load();
 
-use Nimter\Core\Lina\Lina;
+use Nimter\Lina\Lina;
 
 $lina = new Lina($argv);
