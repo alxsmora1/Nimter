@@ -1,0 +1,22 @@
+name: PHP unit Tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install dependencies
+      run:
+        cd Nimter
+        composer install --prefer-dist --no-progress --no-suggest
+        composer require phpunit/phpunit
+
+    - name: Unit Testing
+      run:
+        cd Nimter
+        ./vendor/bin/phpunit
