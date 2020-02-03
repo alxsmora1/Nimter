@@ -11,7 +11,7 @@ namespace App\Controllers;
 use Nimter\Controllers\Controllers;
 use Nimter\Router\Router;
 
-class homeController
+class HomeController
 {
     /**
      * Function index

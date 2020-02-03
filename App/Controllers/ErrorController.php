@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  Controlador error
  *
@@ -10,7 +11,7 @@ namespace App\Controllers;
 
 use Nimter\Controllers\Controllers;
 
-class errorController
+class ErrorController
 {
     /**
      * Function index
